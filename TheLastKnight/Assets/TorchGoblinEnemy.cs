@@ -7,7 +7,7 @@ public class TorchGoblinEnemy : MonoBehaviour
     Animator animator; 
     public float Health {
         set {
-            //print("value"); 
+            print(value); 
             health = value;
 
             if(health <= 0) {
