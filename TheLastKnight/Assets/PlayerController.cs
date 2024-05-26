@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1f;
     public float collisionOffSet = 0.05f;
     public ContactFilter2D movementFilter;
+    public SwordAttack swordAttack; 
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
         } else {
             return false;
         }
+
     }
 
     void OnMove(InputValue movementValue) {
@@ -85,6 +87,22 @@ public class PlayerController : MonoBehaviour
     
     void OnFire() {
         animator.SetTrigger("sideSlashSword");
+    }
+
+    public void SwordAttack() {
+        LockMovement(); 
+
+        if(spriteRenderer.flipX == true) {
+            swordAttack.AttackLeft(); 
+        } else {
+            swordAttack.AttackRight(); 
+        }
+
+    } 
+
+    public void EndSwordAttack() {
+        UnlockMovement(); 
+        swordAttack.StopAttack(); 
     }
 
     public void LockMovement() {

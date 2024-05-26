@@ -4653,6 +4653,18 @@ PrefabInstance:
       propertyPath: collisionOffSet
       value: 0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 8513629923113739190, guid: b02b553120b8325419eee9bb0d086b7f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3382418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513629923113739190, guid: b02b553120b8325419eee9bb0d086b7f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.09140778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513629923113739190, guid: b02b553120b8325419eee9bb0d086b7f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2902222
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
