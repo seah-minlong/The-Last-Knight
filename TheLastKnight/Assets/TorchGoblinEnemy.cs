@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TorchGoblinEnemy : MonoBehaviour
@@ -19,10 +20,18 @@ public class TorchGoblinEnemy : MonoBehaviour
         }
     }
     public float health = 1; 
-    
-    public void Defeated() {
-        Destroy(gameObject); 
+
+    private void Start() {
+        animator = GetComponent<Animator>(); 
+
     }
 
-    
+    public void Defeated() {
+        animator.SetTrigger("Defeated"); 
+    }
+
+    public void RemoveEnemy() {
+        Destroy(gameObject); 
+    }
+ 
 }
