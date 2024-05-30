@@ -11,24 +11,20 @@ public class SwordAttack : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        swordCollider = GetComponent<Collider2D>();
         rightAttackOffset = transform.position; 
     }
 
     public void AttackRight() {
-        swordCollider.enabled = true; 
         transform.localPosition = rightAttackOffset; 
-
     }
 
     public void AttackLeft() { 
-        swordCollider.enabled = true; 
         transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y); //flip the hitbox when attacking left 
-
     }
 
     public void StopAttack() {
         swordCollider.enabled = false; 
-
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
