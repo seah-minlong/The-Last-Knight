@@ -44,9 +44,6 @@ public class PlayerController : MonoBehaviour
                         success = TryMove(new Vector2(0, movementInput.y));
                     }
                 }
-
-                // TODO: move y direction -> walk up or down
-
                 animator.SetBool("isMoving", success);
             } else {
                 animator.SetBool("isMoving", false);

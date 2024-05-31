@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,10 +14,13 @@ public class TorchGoblinEnemy : MonoBehaviour
     public float collisionOffSet = 0.05f;
     public ContactFilter2D movementFilter;
     bool canMove = true;
+    Rigidbody2D rb;
+    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     private void Start() {
         animator = GetComponent<Animator>(); 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public float Health {
@@ -50,21 +54,30 @@ public class TorchGoblinEnemy : MonoBehaviour
         canMove = true;
     }
 
-    // Update is called once per frame
-    private void Update() 
-    {
+    private void FixedUpdate() {
+
         if (canMove) {
             // AI Chase
             distance = Vector2.Distance(transform.position, player.transform.position);
-            Vector2 direction = player.transform.position - transform.position;
+            Vector2 direction = (player.transform.position - transform.position).normalized;
+            
+            if (distance < 4) {
+                bool success = TryMove(direction);
 
-            // If player not at current position, try to move
-            if (distance > 0) {
-                transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-                animator.SetBool("isMoving", true);
+                // Checks for "sliding" across objects
+                if (!success) {
+                    // If unable to move in x & y direction, try x-direction
+                    success = TryMove(new Vector2(direction.x, 0));
+
+                    if (!success) {
+                        // Try y-direction
+                        success = TryMove(new Vector2(0, direction.y));
+                    }
+                }
+                animator.SetBool("isMoving", success);
             } else {
                 animator.SetBool("isMoving", false);
-            } 
+            }
 
             // Set direction of sprite to movement direction
             if (direction.x < 0) {
@@ -73,6 +86,25 @@ public class TorchGoblinEnemy : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
-        
+    }
+
+    public bool TryMove(Vector2 direction) {
+        if (direction == Vector2.zero) {
+            return false;
+        }
+        // Check for potential collisions
+        int count = rb.Cast(
+            direction, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
+            movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
+            castCollisions, // List of coliisions to store the found collisions after the Cast is finished
+            moveSpeed * Time.fixedDeltaTime + collisionOffSet); // The amount to cast equal to the movement plus an offset
+
+        if (count == 0) {
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
