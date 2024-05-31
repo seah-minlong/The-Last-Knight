@@ -3586,6 +3586,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5280252305670762024, guid: b02b553120b8325419eee9bb0d086b7f, type: 3}
   m_PrefabInstance: {fileID: 6207277480405203492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1070689530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6840243246065455279, guid: b02b553120b8325419eee9bb0d086b7f, type: 3}
+  m_PrefabInstance: {fileID: 6207277480405203492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222300299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3646,6 +3651,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchGoblin
       objectReference: {fileID: 0}
+    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1070689530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4643,6 +4656,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchGoblin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1070689530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4747,6 +4768,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchGoblin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1070689530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

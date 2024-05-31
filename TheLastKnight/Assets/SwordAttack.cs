@@ -20,7 +20,7 @@ public class SwordAttack : MonoBehaviour
     }
 
     public void AttackLeft() { 
-        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y); //flip the hitbox when attacking left 
+        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y); // flip the hitbox when attacking left 
     }
 
     public void StopAttack() {
