@@ -4,20 +4,22 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public float collisionOffSet = 0.05f;
-    public ContactFilter2D movementFilter;
-    public SwordAttack swordAttack; 
-
+    public ContactFilter2D movementFilter; 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
+    private Vector3 change;
     bool canMove = true;
+
+    // attacks
+    public SideSlash sideSlash;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +30,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-
         if (canMove) {
+            change = Vector3.zero;
+            change.x = Input.GetAxisRaw("Horizontal");
+            change.y = Input.GetAxisRaw("Vertical");
             // If movement is not 0, try to move
             if (movementInput != Vector2.zero) {
                 bool success = TryMove(movementInput);
@@ -71,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
         if (count == 0) {
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
             return true;
         } else {
             return false;
@@ -83,23 +89,16 @@ public class PlayerController : MonoBehaviour
     }
     
     void OnFire() {
-        animator.SetTrigger("sideSlashSword");
+        animator.SetTrigger("attack");
     }
 
-    public void SwordAttack() {
-        LockMovement(); 
-
+    public void SideSlash() {
+        LockMovement();
         if(spriteRenderer.flipX == true) {
-            swordAttack.AttackLeft(); 
+            sideSlash.AttackLeft(); 
         } else {
-            swordAttack.AttackRight(); 
+            sideSlash.AttackRight(); 
         }
-
-    } 
-
-    public void EndSwordAttack() {
-        UnlockMovement(); 
-        swordAttack.StopAttack(); 
     }
 
     public void LockMovement() {

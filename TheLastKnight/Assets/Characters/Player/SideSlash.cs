@@ -1,30 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-//using System.Numerics;
 using UnityEngine;
 
-public class SwordAttack : MonoBehaviour
+public class SideSlash : MonoBehaviour
 {
-    public float damage = 3;  
-    public Collider2D swordCollider; 
-    Vector2 rightAttackOffset; 
+    public float damage = 3;
+    private BoxCollider2D swordCollider; 
+    private Vector2 rightAttackOffset; 
 
     // Start is called before the first frame update
-    void Start() {
-        swordCollider = GetComponent<Collider2D>();
+    void Start()
+    {
+        swordCollider = GetComponent<BoxCollider2D>();
         rightAttackOffset = transform.position; 
     }
 
     public void AttackRight() {
-        transform.localPosition = rightAttackOffset; 
+        transform.localPosition = rightAttackOffset;
     }
 
     public void AttackLeft() { 
-        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y); // flip the hitbox when attacking left 
-    }
-
-    public void StopAttack() {
-        swordCollider.enabled = false; 
+        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y); // flip the hitbox when attacking left
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -39,6 +33,4 @@ public class SwordAttack : MonoBehaviour
             }
         }
     }
-
-    
 }
