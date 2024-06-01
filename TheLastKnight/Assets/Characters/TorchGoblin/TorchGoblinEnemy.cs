@@ -7,6 +7,7 @@ public class TorchGoblinEnemy : MonoBehaviour
 {
     Animator animator; 
     public float health = 1; 
+    private bool alive = true;
     SpriteRenderer spriteRenderer;
     public GameObject player;
     private float distance;
@@ -28,9 +29,10 @@ public class TorchGoblinEnemy : MonoBehaviour
             print(value); 
             health = value;
 
-            if(health <= 0) {
+            if(alive && health <= 0) {
                 LockMovement();
                 Defeated();
+                alive = false;
             }
         }
         get {
