@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TorchGoblinEnemy : MonoBehaviour
+abstract public class MobAIChase : MonoBehaviour
 {
     Animator animator; 
     public float health = 1; 
@@ -55,15 +55,15 @@ public class TorchGoblinEnemy : MonoBehaviour
     public void UnlockMovement() {
         canMove = true;
     }
-
-    private void FixedUpdate() {
-
+    
+    // Input distance to start chasing player
+    protected void AIChase(float distanceFromPlayer) {
         if (canMove) {
             // AI Chase
             distance = Vector2.Distance(transform.position, player.transform.position);
             Vector2 direction = (player.transform.position - transform.position).normalized;
             
-            if (distance < 4) {
+            if (distance < distanceFromPlayer) {
                 bool success = TryMove(direction);
 
                 // Checks for "sliding" across objects
