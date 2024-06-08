@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8500662631541752762}
   - component: {fileID: 2509707283274864649}
-  - component: {fileID: 7150326345329873941}
+  - component: {fileID: 4576337595446295255}
   m_Layer: 0
   m_Name: UpSlash
   m_TagString: Untagged
@@ -87,7 +87,7 @@ PolygonCollider2D:
       - {x: 0.42606637, y: 0.15384322}
       - {x: 0.6324001, y: 0.2922457}
   m_UseDelaunayMesh: 0
---- !u!114 &7150326345329873941
+--- !u!114 &4576337595446295255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2946904584082465298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171dfb0bc50392b49a7f38c62f78f250, type: 3}
+  m_Script: {fileID: 11500000, guid: 76a63ca21c08be84dba56646e23eb7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1415693660429998510}
   - component: {fileID: 558827631497563300}
-  - component: {fileID: 4518290244788008962}
+  - component: {fileID: 1218347911079733754}
   m_Layer: 0
   m_Name: DownSlash
   m_TagString: Untagged
@@ -185,7 +185,7 @@ PolygonCollider2D:
       - {x: 0.6879002, y: -0.41992503}
       - {x: 0.66594356, y: -0.14940117}
   m_UseDelaunayMesh: 0
---- !u!114 &4518290244788008962
+--- !u!114 &1218347911079733754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6038215883700344648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b1e0707bfd63544f964dc7046da0b89, type: 3}
+  m_Script: {fileID: 11500000, guid: 76a63ca21c08be84dba56646e23eb7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
@@ -332,10 +332,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -346,7 +346,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8513629923113739190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -404,22 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae263f6996865043a171dfdbcf4d438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2.5
   collisionOffSet: 0.04
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+  currentHealth: {fileID: 0}
   sideSlash: {fileID: 3022794615531343768}
 --- !u!95 &5774380499052759496
 Animator:
@@ -453,6 +440,7 @@ GameObject:
   - component: {fileID: 8751560141234998824}
   - component: {fileID: 3545287974187913174}
   - component: {fileID: 3022794615531343768}
+  - component: {fileID: 492934646886845064}
   m_Layer: 0
   m_Name: SideSlash
   m_TagString: Untagged
@@ -530,6 +518,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 428d8c88fad6b384bbb0b02e6e53a207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+--- !u!114 &492934646886845064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488542182820606423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a63ca21c08be84dba56646e23eb7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3

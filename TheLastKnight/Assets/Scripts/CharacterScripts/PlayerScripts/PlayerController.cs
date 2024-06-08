@@ -7,16 +7,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // public
     public float moveSpeed = 1f;
     public float collisionOffSet = 0.05f;
-    public ContactFilter2D movementFilter; 
-    Vector2 movementInput;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
-    Animator animator;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    public FloatValue currentHealth;
+    
+    // private
+    private ContactFilter2D movementFilter; 
+    private Vector2 movementInput;
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+    private Animator animator;
+    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private Vector3 change;
-    bool canMove = true;
+    private bool canMove = true;
 
     // attacks
     public SideSlash sideSlash;

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4701682644024112891}
   - component: {fileID: 7237100111144318705}
   - component: {fileID: 4558392520924911642}
-  - component: {fileID: 8186801162605719148}
   - component: {fileID: 8503284498476174052}
+  - component: {fileID: 7795634856525316734}
   m_Layer: 0
   m_Name: TorchGoblin
   m_TagString: Enemy
@@ -100,10 +100,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4558392520924911642
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,36 +160,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28008616, y: 0.102797836}
   m_EdgeRadius: 0
---- !u!114 &8186801162605719148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7119621679897767213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c1f2a8ccf56440a2af533230dc9db32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  player: {fileID: 0}
-  moveSpeed: 1.5
-  collisionOffSet: 0.05
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!95 &8503284498476174052
 Animator:
   serializedVersion: 5
@@ -211,3 +181,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7795634856525316734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119621679897767213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1f2a8ccf56440a2af533230dc9db32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: d7be88c1a4bd8b741abac10a4d54c97f, type: 2}
+  health: 1
+  moveSpeed: 1.5
+  collisionOffSet: 0.04
+  attackDmg: 1
+  chaseRadius: 4
+  attackRadius: 1
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

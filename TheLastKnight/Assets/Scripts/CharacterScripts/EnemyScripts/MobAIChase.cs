@@ -3,67 +3,27 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-abstract public class MobAIChase : MonoBehaviour
+abstract public class MobAIChase : Enemy
 {
-    Animator animator; 
-    public float health = 1; 
-    private bool alive = true;
-    SpriteRenderer spriteRenderer;
-    public GameObject player;
-    private float distance;
-    public float moveSpeed = 1f;
-    public float collisionOffSet = 0.05f;
+    public float chaseRadius = 4;
+    public float attackRadius = 2;
+
     public ContactFilter2D movementFilter;
-    bool canMove = true;
-    Rigidbody2D rb;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
-    private void Start() {
-        animator = GetComponent<Animator>(); 
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    public float Health {
-        set {
-            print(value); 
-            health = value;
-
-            if(alive && health <= 0) {
-                LockMovement();
-                Defeated();
-                alive = false;
-            }
-        }
-        get {
-            return health;
-        }
-    }
-    
-    public void Defeated() {
-        animator.SetTrigger("Defeated"); 
-    }
-
-    public void RemoveEnemy() {
-        Destroy(gameObject); 
-    }
-
-    public void LockMovement() {
-        canMove = false;
-    }
-
-    public void UnlockMovement() {
-        canMove = true;
-    }
     
     // Input distance to start chasing player
-    protected void AIChase(float distanceFromPlayer) {
+    protected void AIChase(float chaseRadius, float attackRadius) {
         if (canMove) {
+            animator.SetBool("isMoving", true);
+
             // AI Chase
-            distance = Vector2.Distance(transform.position, player.transform.position);
-            Vector2 direction = (player.transform.position - transform.position).normalized;
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            Vector3 direction = (player.transform.position - transform.position).normalized;
             
-            if (distance < distanceFromPlayer) {
+            Debug.Log(distance);
+            Debug.Log(distance <= chaseRadius);
+
+            if (distance <= chaseRadius && distance > attackRadius) {
                 bool success = TryMove(direction);
 
                 // Checks for "sliding" across objects
@@ -76,7 +36,6 @@ abstract public class MobAIChase : MonoBehaviour
                         success = TryMove(new Vector2(0, direction.y));
                     }
                 }
-                animator.SetBool("isMoving", success);
             } else {
                 animator.SetBool("isMoving", false);
             }
@@ -100,7 +59,8 @@ abstract public class MobAIChase : MonoBehaviour
             movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
             castCollisions, // List of coliisions to store the found collisions after the Cast is finished
             moveSpeed * Time.fixedDeltaTime + collisionOffSet); // The amount to cast equal to the movement plus an offset
-
+        
+        
         if (count == 0) {
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
             return true;
@@ -108,5 +68,9 @@ abstract public class MobAIChase : MonoBehaviour
             return false;
         }
 
+    }
+
+    public override void Defeated() {
+        animator.SetTrigger("Defeated"); 
     }
 }

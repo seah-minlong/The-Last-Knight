@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1883295751664466911}
   m_Layer: 0
   m_Name: House_Blue
-  m_TagString: Untagged
+  m_TagString: Interactable env objs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

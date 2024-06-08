@@ -6,6 +6,6 @@ using UnityEngine;
 public class TorchGoblinEnemy : MobAIChase
 {
     private void FixedUpdate() {
-        AIChase(4);
+        AIChase(chaseRadius, attackRadius);
     }
 }
