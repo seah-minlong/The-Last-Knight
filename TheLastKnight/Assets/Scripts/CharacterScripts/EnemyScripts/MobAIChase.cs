@@ -29,9 +29,11 @@ abstract public class MobAIChase : Enemy
                 // Check to see if enough time has passed since we last attacked
                 if (Time.time > lastAttackTime + attackDelay) 
                 {
+                    animator.SetBool("isMoving", false);
                     animator.SetFloat("moveX", direction.x);
                     animator.SetFloat("moveY", direction.y);
                     animator.SetTrigger("attack");
+                    
                     // Record the time we attacked
                     lastAttackTime = Time.time;
                 }
