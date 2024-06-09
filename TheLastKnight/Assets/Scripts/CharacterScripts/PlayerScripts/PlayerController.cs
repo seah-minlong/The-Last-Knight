@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +9,10 @@ public class PlayerController : MonoBehaviour
     // public
     public float moveSpeed = 1f;
     public float collisionOffSet = 0.05f;
+
+    // Health System
     public FloatValue currentHealth;
+    public MySignal playerHealthSignal;
     
     // private
     private ContactFilter2D movementFilter; 
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private Vector3 change;
     private bool canMove = true;
+    private bool alive = true;
 
     // attacks
     public SideSlash sideSlash;
@@ -34,40 +37,51 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (canMove) {
+        if (canMove) 
+        {
             change = Vector3.zero;
             change.x = Input.GetAxisRaw("Horizontal");
             change.y = Input.GetAxisRaw("Vertical");
             // If movement is not 0, try to move
-            if (movementInput != Vector2.zero) {
+            if (movementInput != Vector2.zero) 
+            {
                 bool success = TryMove(movementInput);
 
                 // Checks for "sliding" across objects
-                if (!success) {
+                if (!success) 
+                {
                     // If unable to move in x & y direction, try x-direction
                     success = TryMove(new Vector2(movementInput.x, 0));
 
-                    if (!success) {
+                    if (!success) 
+                    {
                         // Try y-direction
                         success = TryMove(new Vector2(0, movementInput.y));
                     }
                 }
                 animator.SetBool("isMoving", success);
-            } else {
+            } 
+            else 
+            {
                 animator.SetBool("isMoving", false);
             }
 
             // Set direction of sprite to movement direction
-            if (movementInput.x < 0) {
+            if (movementInput.x < 0) 
+            {
                 spriteRenderer.flipX = true;
-            } else if (movementInput.x > 0) {
+            } 
+            else if (movementInput.x > 0) 
+            {
                 spriteRenderer.flipX = false;
             }
         }
     }
 
-    public bool TryMove(Vector2 direction) {
-        if (direction == Vector2.zero) {
+    public bool TryMove(Vector2 direction) 
+    {
+        if (direction == Vector2.zero) 
+        {
             return false;
         }
         // Check for potential collisions
@@ -77,39 +91,66 @@ public class PlayerController : MonoBehaviour
             castCollisions, // List of coliisions to store the found collisions after the Cast is finished
             moveSpeed * Time.fixedDeltaTime + collisionOffSet); // The amount to cast equal to the movement plus an offset
 
-        if (count == 0) {
+        if (count == 0) 
+        {
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             return true;
-        } else {
+        } 
+        else {
             return false;
         }
 
     }
 
-    void OnMove(InputValue movementValue) {
+    void OnMove(InputValue movementValue) 
+    {
         movementInput = movementValue.Get<Vector2>();
     }
     
-    void OnFire() {
+    void OnFire() 
+    {
         animator.SetTrigger("attack");
     }
 
-    public void SideSlash() {
+    public void SideSlash() 
+    {
         LockMovement();
-        if(spriteRenderer.flipX == true) {
+        if (spriteRenderer.flipX == true) 
+        {
             sideSlash.AttackLeft(); 
-        } else {
+        } 
+        else 
+        {
             sideSlash.AttackRight(); 
         }
     }
 
-    public void LockMovement() {
+    public void TookDamage(float damage) 
+    {
+        currentHealth.RuntimeValue -= damage;
+        playerHealthSignal.Raise();
+        if (alive & currentHealth.RuntimeValue <= 0) 
+        {
+            LockMovement();
+            Defeated();
+            alive = false;
+        }
+    }
+    
+    public void Defeated() 
+    {
+        animator.SetTrigger("Defeated");
+    }
+
+    public void LockMovement() 
+    {
         canMove = false;
     }
 
-    public void UnlockMovement() {
+    public void UnlockMovement() 
+    {
         canMove = true;
     }
 }

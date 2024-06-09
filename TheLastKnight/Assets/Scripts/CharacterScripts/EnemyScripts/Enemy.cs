@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 abstract public class Enemy : MonoBehaviour
@@ -7,16 +8,17 @@ abstract public class Enemy : MonoBehaviour
     public float health; 
     public float moveSpeed = 2f;
     public float collisionOffSet = 0.04f;
-    public float attackDmg = 1;
+    public float attackDelay;
+    
     
     // protected
-    protected bool alive = true;
     protected bool canMove = true;
     protected Animator animator; 
     protected Rigidbody2D rb;
     protected SpriteRenderer spriteRenderer;
-
     protected GameObject player;
+    protected float lastAttackTime = 0;
+    protected bool alive = true;
 
     private void Start() {
         animator = GetComponent<Animator>(); 
@@ -42,7 +44,10 @@ abstract public class Enemy : MonoBehaviour
         }
     }
     
-    public abstract void Defeated();
+    public void Defeated() 
+    {
+        animator.SetTrigger("Defeated"); 
+    }
 
     public void RemoveEnemy() {
         Destroy(gameObject); 
