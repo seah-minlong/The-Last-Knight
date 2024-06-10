@@ -7,7 +7,7 @@ public class SideSlash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rightAttackOffset = transform.position; 
+        rightAttackOffset = transform.localPosition; 
     }
 
     public void AttackRight() {
@@ -15,6 +15,7 @@ public class SideSlash : MonoBehaviour
     }
 
     public void AttackLeft() { 
-        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y); // flip the hitbox when attacking left
+        transform.localPosition = new Vector3(-rightAttackOffset.x, rightAttackOffset.y); // flip the hitbox when attacking left
     }
 }
+
