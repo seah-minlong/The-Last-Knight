@@ -8278,6 +8278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchGoblin (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 7237100111144318705, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7795634856525316734, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
       propertyPath: player
       value: 

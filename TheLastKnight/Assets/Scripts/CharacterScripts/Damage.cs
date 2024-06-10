@@ -7,8 +7,8 @@ public class Damage : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.CompareTag("Enemy")) {
-            Debug.Log("contacted enemy");
+        if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Enemy")) {
+            Debug.Log("player hit enemy");
             //Deal damage to Enemy 
             Enemy enemy = other.GetComponent<Enemy>(); 
 
@@ -19,9 +19,9 @@ public class Damage : MonoBehaviour {
             }
         } 
         
-        if (other.gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Enemy") && other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player hit");
+            Debug.Log("enemy hit player");
             PlayerController player = other.GetComponent<PlayerController>();
 
             if (player != null) 
