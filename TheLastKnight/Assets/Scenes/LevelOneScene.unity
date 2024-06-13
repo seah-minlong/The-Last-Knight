@@ -33256,30 +33256,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4558392520924911642, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821070784349544679, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Size.x
-      value: 0.57715464
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821070784349544679, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5663493
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821070784349544679, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821070784349544679, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.12442565
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821070784349544679, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0005790293
-      objectReference: {fileID: 0}
     - target: {fileID: 5845022882042664105, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.31
@@ -33324,28 +33300,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchGoblin (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7795634856525316734, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1070689530}
-    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8186801162605719148, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1070689530}
-    - target: {fileID: 8417135010828671273, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947260574437899135, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6189915822197368388, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
