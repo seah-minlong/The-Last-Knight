@@ -28,7 +28,7 @@ abstract public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
     }
 
-    public float Health {
+    public virtual float Health {
         set {
             print(value);
             health = value;
