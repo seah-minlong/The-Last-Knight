@@ -26,10 +26,11 @@ abstract public class MobAIChase : Enemy
 
             if (distance <= attackRadius)
             {
+                
+                animator.SetBool("isMoving", false);
                 // Check to see if enough time has passed since we last attacked
                 if (Time.time > lastAttackTime + attackDelay) 
                 {
-                    animator.SetBool("isMoving", false);
                     animator.SetFloat("moveX", direction.x);
                     animator.SetFloat("moveY", direction.y);
                     animator.SetTrigger("attack");

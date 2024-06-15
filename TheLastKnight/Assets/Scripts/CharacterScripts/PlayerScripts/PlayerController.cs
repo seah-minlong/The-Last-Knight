@@ -25,6 +25,15 @@ public class PlayerController : MonoBehaviour
     private bool canMove = true;
     private bool alive = true;
 
+    [Tooltip("Material to switch to during the flash.")]
+    [SerializeField] private Material flashMaterial;
+
+    [Tooltip("Duration of the flash.")]
+    [SerializeField] private float flashDuration;
+
+    private Material originalMaterial;
+    private Coroutine flashRoutine;
+
     // attacks
     public SideSlash sideSlash;
 
@@ -34,6 +43,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        originalMaterial = spriteRenderer.material;
     }
 
     private void FixedUpdate() {
@@ -136,6 +146,9 @@ public class PlayerController : MonoBehaviour
             LockMovement();
             Defeated();
             alive = false;
+        } else 
+        {
+            HitFlash();
         }
     }
     
@@ -152,5 +165,34 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement() 
     {
         canMove = true;
+    }
+
+    public void HitFlash() 
+    {
+        // If the flashRoutine is not null, then it is currently running.
+        if (flashRoutine != null)
+        {
+            // In this case, we should stop it first.
+            // Multiple FlashRoutines the same time would cause bugs.
+            StopCoroutine(flashRoutine);
+        }
+
+        // Start the Coroutine, and store the reference for it.
+        flashRoutine = StartCoroutine(FlashRoutine());
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        // Swap to the flashMaterial.
+        spriteRenderer.material = flashMaterial;
+
+        // Pause the execution of this function for "duration" seconds.
+        yield return new WaitForSeconds(flashDuration);
+
+        // After the pause, swap back to the original material.
+        spriteRenderer.material = originalMaterial;
+
+        // Set the routine to null, signaling that it's finished.
+        flashRoutine = null;
     }
 }
