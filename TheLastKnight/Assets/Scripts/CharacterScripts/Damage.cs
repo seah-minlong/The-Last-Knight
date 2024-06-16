@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Damage : MonoBehaviour {
@@ -30,5 +31,17 @@ public class Damage : MonoBehaviour {
                 player.TookDamage(damage);
             }
         } 
+
+        if (other.gameObject.CompareTag("Env obj"))
+        {
+            Debug.Log("hit env");
+            EnvObj entity = other.GetComponent<EnvObj>();
+
+            if (entity != null) 
+            {
+                Debug.Log("entity took dmg");
+                entity.TookDamage(damage);
+            }
+        }
     }
 }

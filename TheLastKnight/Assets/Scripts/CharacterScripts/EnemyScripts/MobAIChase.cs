@@ -14,6 +14,8 @@ abstract public class MobAIChase : Enemy
 
     public ContactFilter2D movementFilter;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+
+    private bool firstContact = true;
     
     // Input distance to start chasing player
     protected void AIChase(float chaseRadius, float attackRadius) {
@@ -29,7 +31,8 @@ abstract public class MobAIChase : Enemy
                 
                 animator.SetBool("isMoving", false);
                 // Check to see if enough time has passed since we last attacked
-                if (Time.time > lastAttackTime + attackDelay) 
+                // If first contact, just attack
+                if (firstContact || Time.time > lastAttackTime + attackDelay) 
                 {
                     animator.SetFloat("moveX", direction.x);
                     animator.SetFloat("moveY", direction.y);
@@ -37,6 +40,7 @@ abstract public class MobAIChase : Enemy
                     
                     // Record the time we attacked
                     lastAttackTime = Time.time;
+                    firstContact = false;
                 }
             } else if (distance <= chaseRadius && distance > attackRadius) 
             {

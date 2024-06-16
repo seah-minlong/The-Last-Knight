@@ -7,12 +7,14 @@ public class Bosses : Enemy
     public float chaseRadius = 4;
     public float attackRadius = 2;
     public GameObject portal;
+    public Vector3 portalPosition = new Vector3();
 
     // attacks
     public SideSlash sideSlash;
 
     public ContactFilter2D movementFilter;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    private bool firstContact = true;
     
     private void FixedUpdate() {
         AIChase(chaseRadius, attackRadius);
@@ -31,7 +33,8 @@ public class Bosses : Enemy
             {
                 animator.SetBool("isMoving", false);
                 // Check to see if enough time has passed since we last attacked
-                if (Time.time > lastAttackTime + attackDelay) 
+                // If first contact, just attack
+                if (firstContact || Time.time > lastAttackTime + attackDelay) 
                 {
                     animator.SetFloat("moveX", direction.x);
                     animator.SetFloat("moveY", direction.y);
@@ -39,6 +42,7 @@ public class Bosses : Enemy
                     
                     // Record the time we attacked
                     lastAttackTime = Time.time;
+                    firstContact = false;
                 }
             } else if (distance <= chaseRadius && distance > attackRadius) 
             {
@@ -118,6 +122,6 @@ public class Bosses : Enemy
 
     public void OpenPortal()
     {
-        Instantiate(portal, transform.position, transform.rotation);
+        Instantiate(portal, portalPosition, transform.rotation);
     }
 }
