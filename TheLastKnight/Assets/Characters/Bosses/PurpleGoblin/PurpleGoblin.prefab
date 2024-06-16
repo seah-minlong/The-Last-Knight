@@ -217,24 +217,11 @@ MonoBehaviour:
   attackDelay: 3
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
   flashDuration: 0.6
+  portal: {fileID: 9191556517491805878, guid: cfcf699a6f4254d8a94e2469d542f45a, type: 3}
+  portalPosition: {x: 0, y: 0, z: 0}
   chaseRadius: 4
   attackRadius: 1.5
-  portal: {fileID: 9191556517491805878, guid: cfcf699a6f4254d8a94e2469d542f45a, type: 3}
   sideSlash: {fileID: 4522900583699413679}
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!1 &7817669804023622645
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,14 +8,13 @@ abstract public class MobAIChase : Enemy
 {
     public float chaseRadius = 4;
     public float attackRadius = 2;
+    
+    private ContactFilter2D movementFilter;
+    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    private bool firstContact = true;
 
     // attacks
     public SideSlash sideSlash;
-
-    public ContactFilter2D movementFilter;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
-    private bool firstContact = true;
     
     // Input distance to start chasing player
     protected void AIChase(float chaseRadius, float attackRadius) {

@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bosses : Enemy
+public class PurpleGoblin : Bosses
 { 
     public float chaseRadius = 4;
     public float attackRadius = 2;
-    public GameObject portal;
-    public Vector3 portalPosition = new Vector3();
-
+    
+    private ContactFilter2D movementFilter;
+    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    private bool firstContact = true;
+    
     // attacks
     public SideSlash sideSlash;
 
-    public ContactFilter2D movementFilter;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-    private bool firstContact = true;
-    
     private void FixedUpdate() {
         AIChase(chaseRadius, attackRadius);
     }
@@ -120,8 +118,20 @@ public class Bosses : Enemy
         }
     }
 
-    public void OpenPortal()
-    {
-        Instantiate(portal, portalPosition, transform.rotation);
+    public override void TookDamage(float damage) {
+        
+        health -= damage;
+        if(alive)
+        {
+            if (health <= 0)
+            {
+                LockMovement();
+                Defeated();
+                alive = false;
+            } else
+            {
+                Stagger();
+            }
+        } 
     }
 }

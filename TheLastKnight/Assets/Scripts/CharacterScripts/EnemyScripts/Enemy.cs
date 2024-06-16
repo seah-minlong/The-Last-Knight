@@ -21,7 +21,7 @@ abstract public class Enemy : MonoBehaviour
     protected float lastAttackTime = 0;
     protected bool alive = true;
 
-    // private
+    // For whiteFlash on enemy hit
     [Tooltip("Material to switch to during the flash.")]
     [SerializeField] private Material flashMaterial;
 
@@ -42,28 +42,7 @@ abstract public class Enemy : MonoBehaviour
         originalMaterial = spriteRenderer.material;
     }
 
-    public float Health {
-        set {
-            print(value);
-            health = value;
-
-            if(alive)
-            {
-                if (health <= 0)
-                {
-                    LockMovement();
-                    Defeated();
-                    alive = false;
-                } else 
-                {
-                    Stagger();
-                }
-            } 
-        }
-        get {
-            return health;
-        }
-    }
+    public abstract void TookDamage(float damage);
     
     public void Defeated() 
     {

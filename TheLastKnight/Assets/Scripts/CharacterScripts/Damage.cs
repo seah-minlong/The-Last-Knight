@@ -16,7 +16,7 @@ public class Damage : MonoBehaviour {
             if (enemy != null) 
             {
                 Debug.Log("took damage"); 
-                enemy.Health -= damage; 
+                enemy.TookDamage(damage); 
             }
         } 
         
