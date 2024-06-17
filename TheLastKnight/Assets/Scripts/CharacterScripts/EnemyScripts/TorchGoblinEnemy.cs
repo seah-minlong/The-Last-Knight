@@ -6,7 +6,7 @@ using UnityEngine;
 public class TorchGoblinEnemy : MobAIChase
 {
     private void FixedUpdate() {
-        AIChase(chaseRadius, attackRadius);
+        AIChase(getChaseRadius(), getAttackRadius());
     }
 
     public override void TookDamage(float damage) {

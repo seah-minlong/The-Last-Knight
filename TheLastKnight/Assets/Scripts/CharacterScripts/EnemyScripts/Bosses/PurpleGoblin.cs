@@ -1,24 +1,26 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PurpleGoblin : Bosses
 { 
-    public float chaseRadius = 4;
-    public float attackRadius = 2;
+    [Header("Boss properties")]
+    [SerializeField] float chaseRadius = 4;
+    [SerializeField] float attackRadius = 2;
     
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private bool firstContact = true;
     
     // attacks
-    public SideSlash sideSlash;
+    [SerializeField] SideSlash sideSlash;
 
     private void FixedUpdate() {
         AIChase(chaseRadius, attackRadius);
     }
     
-    // Input distance to start chasing player
+    #region MOVEMENT AND ATTACK
     protected void AIChase(float chaseRadius, float attackRadius) {
         
         if (canMove) {
@@ -26,6 +28,16 @@ public class PurpleGoblin : Bosses
             // AI Chase
             float distance = Vector3.Distance(transform.position, player.transform.position);
             Vector3 direction = (player.transform.position - transform.position).normalized;
+
+            // Set direction of sprite to movement direction
+            if (direction.x < 0) 
+            {
+                spriteRenderer.flipX = true;
+            } 
+            else if (direction.x > 0) 
+            {
+                spriteRenderer.flipX = false;
+            }
 
             if (distance <= attackRadius)
             {
@@ -61,16 +73,6 @@ public class PurpleGoblin : Bosses
                 // animator.SetFloat("moveX", direction.x);
                 // animator.SetFloat("moveY", direction.y);
                 animator.SetBool("isMoving", success);
-
-                // Set direction of sprite to movement direction
-                if (direction.x < 0) 
-                {
-                    spriteRenderer.flipX = true;
-                } 
-                else if (direction.x > 0) 
-                {
-                    spriteRenderer.flipX = false;
-                }
             } 
             else 
             {
@@ -117,6 +119,7 @@ public class PurpleGoblin : Bosses
             sideSlash.AttackRight(); 
         }
     }
+    #endregion
 
     public override void TookDamage(float damage) {
         

@@ -6,14 +6,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // public
-    public float moveSpeed = 1f;
-    public float collisionOffSet = 0.05f;
+    [Header("Player movement")]
+    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float collisionOffSet = 0.05f;
+    [SerializeField] SideSlash sideSlash;
 
-    // Health System
-    public FloatValue currentHealth;
-    public MySignal playerHealthSignal;
+
+    [Header("Player health")]
+    [SerializeField] FloatValue currentHealth;
+    [SerializeField] MySignal playerHealthSignal;
     
+
+    [Header("WhiteFlash on hit")]
+    [Tooltip("Material to switch to during the flash.")]
+    [SerializeField] private Material flashMaterial;
+
+    [Tooltip("Duration of the flash.")]
+    [SerializeField] private float flashDuration;
+
+    private Material originalMaterial;
+    private Coroutine flashRoutine;
+
     // private
     private ContactFilter2D movementFilter; 
     private Vector2 movementInput;
@@ -25,18 +38,6 @@ public class PlayerController : MonoBehaviour
     private bool canMove = true;
     private bool alive = true;
 
-    [Tooltip("Material to switch to during the flash.")]
-    [SerializeField] private Material flashMaterial;
-
-    [Tooltip("Duration of the flash.")]
-    [SerializeField] private float flashDuration;
-
-    private Material originalMaterial;
-    private Coroutine flashRoutine;
-
-    // attacks
-    public SideSlash sideSlash;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         originalMaterial = spriteRenderer.material;
     }
 
+    #region MOVEMENT
     private void FixedUpdate() {
         if (canMove) 
         {
@@ -111,14 +113,25 @@ public class PlayerController : MonoBehaviour
         else {
             return false;
         }
+    }
+    
+    public void LockMovement() 
+    {
+        canMove = false;
+    }
 
+    public void UnlockMovement() 
+    {
+        canMove = true;
     }
 
     void OnMove(InputValue movementValue) 
     {
         movementInput = movementValue.Get<Vector2>();
     }
-    
+    #endregion
+
+    #region ATTACK
     void OnFire() 
     {
         animator.SetTrigger("attack");
@@ -136,7 +149,9 @@ public class PlayerController : MonoBehaviour
             sideSlash.AttackRight(); 
         }
     }
-
+    #endregion
+    
+    #region DAMAGE & HEALTH
     public void TookDamage(float damage) 
     {
         currentHealth.RuntimeValue -= damage;
@@ -155,16 +170,6 @@ public class PlayerController : MonoBehaviour
     public void Defeated() 
     {
         animator.SetTrigger("Defeated");
-    }
-
-    public void LockMovement() 
-    {
-        canMove = false;
-    }
-
-    public void UnlockMovement() 
-    {
-        canMove = true;
     }
 
     public void HitFlash() 
@@ -195,4 +200,6 @@ public class PlayerController : MonoBehaviour
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
     }
+    #endregion
+
 }

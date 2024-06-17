@@ -4,24 +4,17 @@ using UnityEngine;
 
 abstract public class Enemy : MonoBehaviour
 {
-    // public variables
+    [Header("Enemy Health")]
     public FloatValue maxHealth;
-    public float health; 
+
+    [Header("Enemy movement")]
     public float moveSpeed = 2f;
     public float collisionOffSet = 0.04f;
+
+    [Header("Attack")]
     public float attackDelay;
     
-    
-    // protected
-    protected bool canMove = true;
-    protected Animator animator; 
-    protected Rigidbody2D rb;
-    protected SpriteRenderer spriteRenderer;
-    protected GameObject player;
-    protected float lastAttackTime = 0;
-    protected bool alive = true;
-
-    // For whiteFlash on enemy hit
+    [Header("WhiteFlash on hit")]
     [Tooltip("Material to switch to during the flash.")]
     [SerializeField] private Material flashMaterial;
 
@@ -32,6 +25,16 @@ abstract public class Enemy : MonoBehaviour
     private Coroutine flashRoutine;
 
 
+    // protected
+    protected bool canMove = true;
+    protected Animator animator; 
+    protected Rigidbody2D rb;
+    protected SpriteRenderer spriteRenderer;
+    protected GameObject player;
+    protected float lastAttackTime = 0;
+    protected bool alive = true;
+    protected float health; 
+    
     private void Start() {
         animator = GetComponent<Animator>(); 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -61,6 +64,7 @@ abstract public class Enemy : MonoBehaviour
         canMove = true;
     }
 
+    #region STAGGER AND WHITEFLASH
     public void Stagger() 
     {
         // If the flashRoutine is not null, then it is currently running.
@@ -90,5 +94,6 @@ abstract public class Enemy : MonoBehaviour
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
     }
+    #endregion
 
 }

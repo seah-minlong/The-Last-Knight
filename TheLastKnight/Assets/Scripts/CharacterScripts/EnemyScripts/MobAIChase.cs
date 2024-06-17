@@ -6,17 +6,16 @@ using UnityEngine;
 
 abstract public class MobAIChase : Enemy
 {
-    public float chaseRadius = 4;
-    public float attackRadius = 2;
-    
+    [Header("Goblin properties")]
+    [SerializeField] float chaseRadius = 4;
+    [SerializeField] float attackRadius = 2;
+    [SerializeField] SideSlash sideSlash;
+
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private bool firstContact = true;
-
-    // attacks
-    public SideSlash sideSlash;
     
-    // Input distance to start chasing player
+    #region MOVEMENT AND ATTACKING
     protected void AIChase(float chaseRadius, float attackRadius) {
         
         if (canMove) {
@@ -24,6 +23,16 @@ abstract public class MobAIChase : Enemy
             // AI Chase
             float distance = Vector3.Distance(transform.position, player.transform.position);
             Vector3 direction = (player.transform.position - transform.position).normalized;
+
+            // Set direction of sprite to movement direction
+            if (direction.x < 0) 
+            {
+                spriteRenderer.flipX = true;
+            } 
+            else if (direction.x > 0) 
+            {
+                spriteRenderer.flipX = false;
+            }
 
             if (distance <= attackRadius)
             {
@@ -57,19 +66,7 @@ abstract public class MobAIChase : Enemy
                         success = TryMove(new Vector2(0, direction.y));
                     }
                 }
-                // animator.SetFloat("moveX", direction.x);
-                // animator.SetFloat("moveY", direction.y);
                 animator.SetBool("isMoving", success);
-
-                // Set direction of sprite to movement direction
-                if (direction.x < 0) 
-                {
-                    spriteRenderer.flipX = true;
-                } 
-                else if (direction.x > 0) 
-                {
-                    spriteRenderer.flipX = false;
-                }
             } 
             else 
             {
@@ -101,9 +98,9 @@ abstract public class MobAIChase : Enemy
         {
             return false;
         }
-
     }
-
+    #endregion
+    
     public void SideSlash() 
     {
         LockMovement();
@@ -115,5 +112,15 @@ abstract public class MobAIChase : Enemy
         {
             sideSlash.AttackRight(); 
         }
+    }
+
+    public float getChaseRadius()
+    {
+        return chaseRadius;
+    }
+
+    public float getAttackRadius()
+    {
+        return attackRadius;
     }
 }
