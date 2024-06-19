@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("Duration of the flash.")]
     [SerializeField] private float flashDuration;
+
+    [Header("Game Over")]
+    [SerializeField] private GameOverScript gameOverScript; 
 
     private Material originalMaterial;
     private Coroutine flashRoutine;
@@ -170,6 +174,7 @@ public class PlayerController : MonoBehaviour
     public void Defeated() 
     {
         animator.SetTrigger("Defeated");
+        gameOverScript.GameOver(); 
     }
 
     public void HitFlash() 
