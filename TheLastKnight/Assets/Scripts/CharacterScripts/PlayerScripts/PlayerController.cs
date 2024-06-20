@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float flashDuration;
 
     [Header("Game Over")]
-    [SerializeField] private GameOverScript gameOverScript; 
+    [SerializeField] private GameOverScript gameOverScreen; 
 
     private Material originalMaterial;
     private Coroutine flashRoutine;
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
     public void Defeated() 
     {
         animator.SetTrigger("Defeated");
-        gameOverScript.GameOver(); 
+        gameOverScreen.GameOver(); 
     }
 
     public void HitFlash() 
