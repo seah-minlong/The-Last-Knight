@@ -138,7 +138,10 @@ public class PlayerController : MonoBehaviour
     #region ATTACK
     void OnFire() 
     {
-        animator.SetTrigger("attack");
+        if (!PauseMenuScript.isPaused)
+        {
+            animator.SetTrigger("attack");
+        }
     }
 
     public void SideSlash() 

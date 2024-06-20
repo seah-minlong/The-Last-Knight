@@ -198,29 +198,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: {fileID: 11400000, guid: d7be88c1a4bd8b741abac10a4d54c97f, type: 2}
-  health: 1
   moveSpeed: 1.5
   collisionOffSet: 0.04
   attackDelay: 1
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
-  flashDuration: 0.3
+  flashDuration: 0.2
   chaseRadius: 4
   attackRadius: 0.7
   sideSlash: {fileID: 4522900583699413679}
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!114 &589462140593605093
 MonoBehaviour:
   m_ObjectHideFlags: 0
