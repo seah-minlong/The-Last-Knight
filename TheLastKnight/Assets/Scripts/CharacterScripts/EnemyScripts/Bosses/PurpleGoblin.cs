@@ -46,6 +46,8 @@ public class PurpleGoblin : Bosses
                 // If first contact, just attack
                 if (firstContact || Time.time > lastAttackTime + attackDelay) 
                 {
+                    direction.x = Mathf.Round(direction.x);
+                    direction.y = Mathf.Round(direction.y);
                     animator.SetFloat("moveX", direction.x);
                     animator.SetFloat("moveY", direction.y);
                     animator.SetTrigger("attack");

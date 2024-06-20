@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
         if (count == 0) 
         {
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            change.x = Mathf.Round(change.x);
+            change.y = Mathf.Round(change.y);
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             return true;
@@ -138,10 +140,7 @@ public class PlayerController : MonoBehaviour
     #region ATTACK
     void OnFire() 
     {
-        if (!PauseMenuScript.isPaused)
-        {
-            animator.SetTrigger("attack");
-        }
+        animator.SetTrigger("attack");
     }
 
     public void SideSlash() 
