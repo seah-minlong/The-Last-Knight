@@ -382,11 +382,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   collisionOffSet: 0.04
+  sideSlash: {fileID: 3022794615531343768}
   currentHealth: {fileID: 11400000, guid: 7f64b88b45339ad489a876c8aab3cd48, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: b0cd9c77924463849a6353455fa23581, type: 2}
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
   flashDuration: 0.3
-  sideSlash: {fileID: 3022794615531343768}
+  gameOverScreen: {fileID: 0}
 --- !u!95 &5774380499052759496
 Animator:
   serializedVersion: 5
