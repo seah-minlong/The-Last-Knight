@@ -33,7 +33,7 @@ public class TorchGoblinEnemy : MobAIChase
     {
         // chance that heart will drop 20%
         int rand = Random.Range(0, 100);
-        if (rand <= 30) 
+        if (rand <= 10) 
         {
             Instantiate(heart, transform.position, transform.rotation);
         }
