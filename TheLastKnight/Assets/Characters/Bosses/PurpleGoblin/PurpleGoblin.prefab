@@ -218,7 +218,6 @@ MonoBehaviour:
   flashDuration: 0.6
   attackSoundClip: {fileID: 8300000, guid: 26a9912d46ca3a74a89b28583e8ac173, type: 3}
   portal: {fileID: 9191556517491805878, guid: cfcf699a6f4254d8a94e2469d542f45a, type: 3}
-  portalSpawnClip: {fileID: 8300000, guid: 4afeff8f0e0756043a98dcf7d89f8ada, type: 3}
   portalPosition: {x: 0, y: 0, z: 0}
   chaseRadius: 4
   attackRadius: 1.5
