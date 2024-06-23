@@ -203,9 +203,12 @@ MonoBehaviour:
   attackDelay: 1
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
   flashDuration: 0.2
+  attackSoundClip: {fileID: 8300000, guid: 01d573925e3f1424a891c29f4633f1ed, type: 3}
   chaseRadius: 4
   attackRadius: 0.7
   sideSlash: {fileID: 4522900583699413679}
+  heart: {fileID: 6956914474929770964, guid: 35369a3bdb126134088d5d353cd8fc66, type: 3}
+  damageSoundClip: {fileID: 8300000, guid: 3dc75fe768a01b34aaa142e4d29ac93e, type: 3}
 --- !u!114 &589462140593605093
 MonoBehaviour:
   m_ObjectHideFlags: 0

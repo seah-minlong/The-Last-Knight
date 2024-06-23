@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenuCanvas; 
-    private static bool isPaused = false; 
+
+    public static bool isPaused = false; 
     void Update()
     {
         
@@ -20,9 +21,11 @@ public class PauseMenuScript : MonoBehaviour
             
             if (isPaused)
             {
+                SoundMenuManager.instance.PauseSound();
                 Resume();
             } else
             {
+                SoundMenuManager.instance.PauseSound();
                 Pause();
             }
         }
@@ -32,12 +35,14 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuCanvas.SetActive(true); 
         Time.timeScale = 0;
         isPaused = true;
+        SoundMenuManager.instance.PauseMusic();
     }
 
     public void Resume() {
         pauseMenuCanvas.SetActive(false); 
         Time.timeScale = 1; 
         isPaused = false;
+        SoundMenuManager.instance.ResumeMusic();
     }
 
     public void MainMenu() {

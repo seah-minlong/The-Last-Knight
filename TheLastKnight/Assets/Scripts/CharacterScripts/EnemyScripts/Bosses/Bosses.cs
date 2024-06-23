@@ -4,7 +4,7 @@ using UnityEngine;
 
 abstract public class Bosses : Enemy
 { 
-    [Header("Portal")]
+    [Header("----------Portal-----------")]
     [SerializeField] GameObject portal;
     [SerializeField] Vector3 portalPosition = new Vector3();
 

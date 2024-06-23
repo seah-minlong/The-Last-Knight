@@ -387,7 +387,13 @@ MonoBehaviour:
   playerHealthSignal: {fileID: 11400000, guid: b0cd9c77924463849a6353455fa23581, type: 2}
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
   flashDuration: 0.3
-  gameOverScreen: {fileID: 0}
+  damageSoundClip: {fileID: 8300000, guid: 23faf97cc9368c246aca867596086e15, type: 3}
+  swordClip1: {fileID: 8300000, guid: a33dddbd290598444b1c5097b834a5ec, type: 3}
+  swordClip2: {fileID: 8300000, guid: 38b6baa2d9174de41832c7d8175b95e2, type: 3}
+  walkingClip1: {fileID: 8300000, guid: ba27deae82609bf4ba6d47b8310f00aa, type: 3}
+  walkingClip2: {fileID: 8300000, guid: 5b69fee6636954a41baa9e14b0cef0cc, type: 3}
+  walkingVolume: 0.08
+  gameOverScreen: {fileID: 1612865505796569079, guid: 991e6ede29e23a3408f8579ecc0cf7c0, type: 3}
 --- !u!95 &5774380499052759496
 Animator:
   serializedVersion: 5

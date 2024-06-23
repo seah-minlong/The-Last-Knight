@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Heart : Powerup
 {
-
     [SerializeField] FloatValue playerHealth;
     [SerializeField] FloatValue heartContainers;
     [SerializeField] float amountToIncrease;

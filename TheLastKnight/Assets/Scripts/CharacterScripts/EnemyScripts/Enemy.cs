@@ -24,6 +24,8 @@ abstract public class Enemy : MonoBehaviour
     private Material originalMaterial;
     private Coroutine flashRoutine;
 
+    [Header("------Attack Sound-------")]
+    [SerializeField] private AudioClip attackSoundClip;
 
     // protected
     protected bool canMove = true;
@@ -62,6 +64,11 @@ abstract public class Enemy : MonoBehaviour
 
     public void UnlockMovement() {
         canMove = true;
+    }
+
+    public void playAttackClip()
+    {
+        SoundFXManager.instance.PlaySoundFXClip(attackSoundClip, transform);
     }
 
     #region STAGGER AND WHITEFLASH

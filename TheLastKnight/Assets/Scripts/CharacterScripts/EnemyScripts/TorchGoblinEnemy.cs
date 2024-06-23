@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TorchGoblinEnemy : MobAIChase
 {
+    [SerializeField] private Powerup heart;
+    [SerializeField] private AudioClip damageSoundClip;
+    
     private void FixedUpdate() {
         AIChase(getChaseRadius(), getAttackRadius());
     }
@@ -14,6 +14,9 @@ public class TorchGoblinEnemy : MobAIChase
         health -= damage;
         if(alive)
         {
+            // play sound FX 
+            SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+
             if (health <= 0)
             {
                 LockMovement();
@@ -24,5 +27,15 @@ public class TorchGoblinEnemy : MobAIChase
                 Stagger();
             }
         } 
+    }
+
+    public void dropHeart()
+    {
+        // chance that heart will drop 20%
+        int rand = Random.Range(0, 100);
+        if (rand <= 30) 
+        {
+            Instantiate(heart, transform.position, transform.rotation);
+        }
     }
 }

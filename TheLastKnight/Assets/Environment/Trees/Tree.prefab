@@ -194,3 +194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  damageSoundClip: {fileID: 8300000, guid: b8d7f223a45ea1041be7eacf25ef0376, type: 3}

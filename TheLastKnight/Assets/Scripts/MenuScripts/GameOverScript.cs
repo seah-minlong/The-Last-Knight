@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     [SerializeField] GameObject gameOverUI; 
-    [SerializeField] GameObject pauseButton; 
+    [SerializeField] AudioClip gameOverMusic;
 
     public void GameOver() 
     {
+        SoundMenuManager.instance.ChangeBackgroundMusic(gameOverMusic);
         gameOverUI.SetActive(true); 
-        pauseButton.SetActive(false); 
         Invoke("Freeze", 0.6f);
     }
 

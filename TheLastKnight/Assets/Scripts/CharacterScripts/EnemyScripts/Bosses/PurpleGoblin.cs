@@ -5,16 +5,22 @@ using UnityEngine;
 
 public class PurpleGoblin : Bosses
 { 
-    [Header("Boss properties")]
+    [Header("--------Boss properties------")]
     [SerializeField] float chaseRadius = 4;
     [SerializeField] float attackRadius = 2;
+
+    [Header("--------Attacks------")]
+    [SerializeField] SideSlash sideSlash;
+
+    [Header("--------SoundFX------")]
+
+    [SerializeField] private AudioClip damageSoundClip;
+    [SerializeField] private AudioClip deathSoundClip;
     
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private bool firstContact = true;
     
-    // attacks
-    [SerializeField] SideSlash sideSlash;
 
     private void FixedUpdate() {
         AIChase(chaseRadius, attackRadius);
@@ -126,6 +132,10 @@ public class PurpleGoblin : Bosses
     public override void TookDamage(float damage) {
         
         health -= damage;
+
+        // play sound FX 
+        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+
         if(alive)
         {
             if (health <= 0)
@@ -138,5 +148,11 @@ public class PurpleGoblin : Bosses
                 Stagger();
             }
         } 
+    }
+
+    public void playDeathSound()
+    {
+        // play sound FX 
+        SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform);
     }
 }

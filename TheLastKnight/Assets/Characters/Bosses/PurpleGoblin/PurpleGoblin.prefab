@@ -216,11 +216,15 @@ MonoBehaviour:
   attackDelay: 3
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
   flashDuration: 0.6
+  attackSoundClip: {fileID: 8300000, guid: 26a9912d46ca3a74a89b28583e8ac173, type: 3}
   portal: {fileID: 9191556517491805878, guid: cfcf699a6f4254d8a94e2469d542f45a, type: 3}
+  portalSpawnClip: {fileID: 8300000, guid: 4afeff8f0e0756043a98dcf7d89f8ada, type: 3}
   portalPosition: {x: 0, y: 0, z: 0}
   chaseRadius: 4
   attackRadius: 1.5
   sideSlash: {fileID: 4522900583699413679}
+  damageSoundClip: {fileID: 8300000, guid: bf25625fb0e329a4f8fbbd01a433cb83, type: 3}
+  deathSoundClip: {fileID: 8300000, guid: 358367a7f1e583249b75273aebd5e3d5, type: 3}
 --- !u!1 &7817669804023622645
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,10 +398,12 @@ PolygonCollider2D:
       - {x: -0.6884275, y: 0.36091405}
       - {x: -0.61800146, y: 0.30948895}
       - {x: -0.53949445, y: 0.29564863}
-      - {x: -0.38308072, y: 0.28509027}
-      - {x: -0.33738935, y: 0.2954452}
-      - {x: -0.1721735, y: 0.30486584}
-      - {x: 0.15885091, y: 0.29809082}
+      - {x: -0.46780205, y: 0.21953946}
+      - {x: -0.27665365, y: -0.070304155}
+      - {x: -0.07997751, y: -0.10012865}
+      - {x: 0.040531635, y: -0.08252573}
+      - {x: 0.22824764, y: -0.077243924}
+      - {x: 0.42783117, y: 0.16734886}
       - {x: 0.47361922, y: 0.30575946}
   m_UseDelaunayMesh: 0
 --- !u!1 &8842891556462146076

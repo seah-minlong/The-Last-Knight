@@ -7,26 +7,37 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player movement")]
+    [Header("-------Player movement-------")]
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float collisionOffSet = 0.05f;
     [SerializeField] SideSlash sideSlash;
 
 
-    [Header("Player health")]
+    [Header("---------Player health----------")]
     [SerializeField] FloatValue currentHealth;
     [SerializeField] MySignal playerHealthSignal;
     
 
-    [Header("WhiteFlash on hit")]
+    [Header("--------WhiteFlash on hit------")]
     [Tooltip("Material to switch to during the flash.")]
     [SerializeField] private Material flashMaterial;
 
-    [Tooltip("Duration of the flash.")]
+    [Tooltip("--------Duration of the flash-----")]
     [SerializeField] private float flashDuration;
 
-    [Header("Game Over")]
+
+    [Header("-------Audio-------")]
+    [SerializeField] private AudioClip damageSoundClip; 
+    [SerializeField] private AudioClip swordClip1; 
+    [SerializeField] private AudioClip swordClip2; 
+    [SerializeField] private AudioClip walkingClip1; 
+    [SerializeField] private AudioClip walkingClip2; 
+    [SerializeField] private float walkingVolume;
+
+
+    [Header("-------Game Over-------")]
     [SerializeField] private GameOverScript gameOverScreen; 
+
 
     private Material originalMaterial;
     private Coroutine flashRoutine;
@@ -131,6 +142,33 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    #region SOUND
+    public void playSwordClip1()
+    {
+        SoundFXManager.instance.PlaySoundFXClip(swordClip1, transform);
+    }
+
+    public void playSwordClip2()
+    {
+        SoundFXManager.instance.PlaySoundFXClip(swordClip2, transform);
+    }
+
+    public void playWalkingClip1()
+    {
+        SoundFXManager.instance.PlaySoundFXClipAtVol(walkingClip1, transform, walkingVolume);
+    }
+
+    public void playWalkingClip2()
+    {
+        SoundFXManager.instance.PlaySoundFXClipAtVol(walkingClip2, transform, walkingVolume);
+    }
+
+    public void playHurtClip()
+    {
+        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+    }
+    #endregion
+
     void OnMove(InputValue movementValue) 
     {
         movementInput = movementValue.Get<Vector2>();
@@ -140,7 +178,10 @@ public class PlayerController : MonoBehaviour
     #region ATTACK
     void OnFire() 
     {
-        animator.SetTrigger("attack");
+        if (!PauseMenuScript.isPaused)
+        {
+            animator.SetTrigger("attack");
+        }
     }
 
     public void SideSlash() 
@@ -160,6 +201,9 @@ public class PlayerController : MonoBehaviour
     #region DAMAGE & HEALTH
     public void TookDamage(float damage) 
     {
+        // play sound FX 
+        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+        
         currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();
         if (alive & currentHealth.RuntimeValue <= 0) 
