@@ -15,7 +15,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         
         // Check for ESC key press
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !FindObjectOfType<GameOverScript>().IsGameOver())
         { 
             Debug.Log("Esc key pressed for pause");
             
@@ -50,4 +50,5 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 1; 
         isPaused = false; 
     }
+    
 }
