@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class PurpleGoblin : Bosses
 { 
-    [Header("--------Boss properties------")]
+    [Header("--------Boss Properties------")]
     [SerializeField] float chaseRadius = 4;
     [SerializeField] float attackRadius = 2;
 
     [Header("--------Attacks------")]
     [SerializeField] SideSlash sideSlash;
+
+    [Header("--------Victory Screen------")] 
+    [SerializeField] VictoryMenuScript victoryMenu; //to remove final boss changed 
 
     [Header("--------SoundFX------")]
 
@@ -20,6 +23,7 @@ public class PurpleGoblin : Bosses
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private bool firstContact = true;
+    
     
 
     private void FixedUpdate() {
@@ -142,6 +146,7 @@ public class PurpleGoblin : Bosses
             {
                 LockMovement();
                 Defeated();
+                victoryMenu.Victory(); //to remove when final boss changed
                 alive = false;
             } else
             {

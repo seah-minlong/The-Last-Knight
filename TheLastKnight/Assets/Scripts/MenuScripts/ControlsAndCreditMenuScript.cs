@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ControlsMenuScript : MonoBehaviour
 {
-    [SerializeField] GameObject controlsMenuCanvas; 
+    [SerializeField] GameObject menuCanvas; 
     void Update() {
         // Check for ESC key press
         if (Input.GetKeyDown(KeyCode.Escape)) { 
-                controlsMenuCanvas.SetActive(false); 
+               menuCanvas.SetActive(false);  
         }
+                
     }
 }
