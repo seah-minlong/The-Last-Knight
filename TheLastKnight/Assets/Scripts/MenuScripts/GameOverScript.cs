@@ -11,7 +11,6 @@ using Unity.VisualScripting;
 public class GameOverScript : MonoBehaviour
 {
     [SerializeField] GameObject gameOverUI; 
-    [SerializeField] GameObject player; 
     [SerializeField] AudioClip gameOverMusic;
     [SerializeField] PlayerController playerController; 
     private static bool isGameOver = false; 

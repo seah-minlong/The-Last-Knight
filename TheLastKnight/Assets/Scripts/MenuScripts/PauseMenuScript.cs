@@ -13,12 +13,10 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isPaused = false; 
     void Update()
     {
-        
         // Check for ESC key press
         if (Input.GetKeyDown(KeyCode.Escape) && !FindObjectOfType<GameOverScript>().IsGameOver() && !FindObjectOfType<VictoryMenuScript>().IsVictory())
         { 
             Debug.Log("Esc key pressed for pause");
-            
             if (isPaused)
             {
                 SoundMenuManager.instance.PauseSound();

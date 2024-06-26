@@ -146,7 +146,7 @@ public class PurpleGoblin : Bosses
             {
                 LockMovement();
                 Defeated();
-                victoryMenu.Victory(); //to remove when final boss changed
+                //victoryMenu.Victory(); //to remove when final boss changed
                 alive = false;
             } else
             {

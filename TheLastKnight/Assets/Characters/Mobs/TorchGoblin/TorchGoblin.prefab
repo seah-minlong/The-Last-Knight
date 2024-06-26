@@ -205,7 +205,7 @@ MonoBehaviour:
   flashDuration: 0.2
   attackSoundClip: {fileID: 8300000, guid: 01d573925e3f1424a891c29f4633f1ed, type: 3}
   chaseRadius: 4
-  attackRadius: 0.7
+  attackRadius: 0.4
   sideSlash: {fileID: 4522900583699413679}
   heart: {fileID: 6956914474929770964, guid: 35369a3bdb126134088d5d353cd8fc66, type: 3}
   damageSoundClip: {fileID: 8300000, guid: 3dc75fe768a01b34aaa142e4d29ac93e, type: 3}
@@ -287,7 +287,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12442565, y: 0.0005790293}
+  m_Offset: {x: -0.1103847, y: -0.059859186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -298,7 +298,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57715464, y: 0.5663493}
+  m_Size: {x: 0.60523653, y: 0.68722576}
   m_EdgeRadius: 0
 --- !u!114 &4522900583699413679
 MonoBehaviour:
@@ -393,13 +393,15 @@ PolygonCollider2D:
       - {x: -0.22991562, y: 0.5760946}
       - {x: -0.59999037, y: 0.45979214}
       - {x: -0.6884275, y: 0.36091405}
-      - {x: -0.61800146, y: 0.30948895}
-      - {x: -0.53949445, y: 0.29564863}
-      - {x: -0.38308072, y: 0.28509027}
-      - {x: -0.33738935, y: 0.2954452}
-      - {x: -0.1721735, y: 0.30486584}
-      - {x: 0.15885091, y: 0.29809082}
-      - {x: 0.47361922, y: 0.30575946}
+      - {x: -0.64502096, y: 0.20141}
+      - {x: -0.56651396, y: 0.15154463}
+      - {x: -0.5361912, y: 0.12522489}
+      - {x: -0.44110715, y: 0.03781581}
+      - {x: -0.28202534, y: -0.065984726}
+      - {x: 0.000024795532, y: -0.018501282}
+      - {x: 0.12138748, y: -0.0521698}
+      - {x: 0.20472074, y: 0.046294093}
+      - {x: 0.35389304, y: 0.11830333}
   m_UseDelaunayMesh: 0
 --- !u!1 &8842891556462146076
 GameObject:
