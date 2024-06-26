@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor; 
 
 
 public class PlayerController : MonoBehaviour
@@ -38,6 +40,14 @@ public class PlayerController : MonoBehaviour
     [Header("-------Game Over-------")]
     [SerializeField] private GameOverScript gameOverScreen; 
 
+    [Header("-------Spawn/Respawn-------")]
+    [SerializeField] GameObject player; 
+    [SerializeField] GameObject spawnPoint; 
+  
+
+    
+
+
 
     private Material originalMaterial;
     private Coroutine flashRoutine;
@@ -52,14 +62,27 @@ public class PlayerController : MonoBehaviour
     private Vector3 change;
     private bool canMove = true;
     private bool alive = true;
+    private static Vector2 checkpointPos = Vector2.zero; 
+    private static int respawnCount = 0; 
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player"); 
+        spawnPoint = GameObject.FindWithTag("SpawnPoint"); 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalMaterial = spriteRenderer.material;
+        
+        respawnCount = PlayerPrefs.GetInt("RespawnCount", 0); 
+
+        if(respawnCount == 0) {
+            player.transform.position = spawnPoint.transform.position; 
+            checkpointPos = spawnPoint.transform.position; 
+        } else {
+            player.transform.position = checkpointPos; 
+        }
     }
 
     #region MOVEMENT
@@ -252,5 +275,33 @@ public class PlayerController : MonoBehaviour
         flashRoutine = null;
     }
     #endregion
+
+    #region CHECKPOINT/RESPAWN
+     public void UpdateCheckpoint(Vector2 pos) {
+        Debug.Log("cp before" + checkpointPos); 
+        checkpointPos = pos; 
+        Debug.Log("cp after" + checkpointPos);
+     }
+
+
+     public Vector2 GetCheckpointPos() {
+        return checkpointPos; 
+     }
+    #endregion 
+
+    private void OnDisable()
+    {
+        Debug.Log("disable called"); 
+        // Only reset respawn count when exiting Play mode in the Unity Editor
+        #if UNITY_EDITOR
+        if (!EditorApplication.isPlayingOrWillChangePlaymode && EditorApplication.isPlaying)
+        {
+            Debug.Log("inside disabled"); 
+            PlayerPrefs.SetInt("RespawnCount", 0);
+            PlayerPrefs.Save();
+        }
+        #endif
+    }
+
 
 }

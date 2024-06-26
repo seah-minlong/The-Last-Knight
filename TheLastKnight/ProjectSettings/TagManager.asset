@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Env obj
+  - SpawnPoint
+  - Pawn
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class VictoryMenuScript : MonoBehaviour
 
     public void Victory() {
         isVictory = true; 
-        Invoke("Freeze", 4.0f);
+        Freeze(); 
         victoryMenuCanvas.SetActive(true); 
     }
 
