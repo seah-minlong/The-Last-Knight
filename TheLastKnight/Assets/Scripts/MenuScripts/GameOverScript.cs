@@ -49,6 +49,9 @@ public class GameOverScript : MonoBehaviour
         gameOverUI.SetActive(false);
         Time.timeScale = 1;
 
+         // Reset the game over state
+        isGameOver = false;
+
         //Set increment respawnCount 
         PlayerPrefs.SetInt("RespawnCount", PlayerPrefs.GetInt("RespawnCount", 0) + 1); 
 
@@ -61,10 +64,7 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene(currentScene.name);
 
         // Wait until the scene is fully loaded
-        yield return new WaitUntil(() => SceneManager.GetActiveScene().isLoaded); 
-
-        // Reset the game over state
-        isGameOver = false;
+        yield return new WaitUntil(() => SceneManager.GetActiveScene().isLoaded);    
     }
 
 

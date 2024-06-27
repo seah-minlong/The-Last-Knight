@@ -13,6 +13,7 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isPaused = false; 
     void Update()
     {
+        Debug.Log("updating in pause script called"); 
         // Check for ESC key press
         if (Input.GetKeyDown(KeyCode.Escape) && !FindObjectOfType<GameOverScript>().IsGameOver() && !FindObjectOfType<VictoryMenuScript>().IsVictory())
         { 

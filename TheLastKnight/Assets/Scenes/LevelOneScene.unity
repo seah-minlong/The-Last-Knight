@@ -6818,14 +6818,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1961494172}
     m_Modifications:
-    - target: {fileID: 681562472377012909, guid: 30f8af4c41e4a944b8619ad7606657fb, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6722772
-      objectReference: {fileID: 0}
-    - target: {fileID: 681562472377012909, guid: 30f8af4c41e4a944b8619ad7606657fb, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.004041791
-      objectReference: {fileID: 0}
     - target: {fileID: 1470442534329868373, guid: 30f8af4c41e4a944b8619ad7606657fb, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -96753,11 +96745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5649088237672594504, guid: a50719a52043ff644a75b40ecea71ecb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.33
+      value: -5.05
       objectReference: {fileID: 0}
     - target: {fileID: 5649088237672594504, guid: a50719a52043ff644a75b40ecea71ecb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.02
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 5649088237672594504, guid: a50719a52043ff644a75b40ecea71ecb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -99717,6 +99709,10 @@ PrefabInstance:
       propertyPath: m_enableVertexGradient
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3145667089265782401, guid: 991e6ede29e23a3408f8579ecc0cf7c0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
     - target: {fileID: 3371519829590524382, guid: 991e6ede29e23a3408f8579ecc0cf7c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -99728,6 +99724,10 @@ PrefabInstance:
     - target: {fileID: 3371519829590524382, guid: 991e6ede29e23a3408f8579ecc0cf7c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857001038772807699, guid: 991e6ede29e23a3408f8579ecc0cf7c0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -95.9
       objectReference: {fileID: 0}
     - target: {fileID: 4641239902573895238, guid: 991e6ede29e23a3408f8579ecc0cf7c0, type: 3}
       propertyPath: m_Pivot.x
@@ -99869,11 +99869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5649088237672594504, guid: a50719a52043ff644a75b40ecea71ecb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.55
+      value: -4.79
       objectReference: {fileID: 0}
     - target: {fileID: 5649088237672594504, guid: a50719a52043ff644a75b40ecea71ecb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.66
+      value: 4.68
       objectReference: {fileID: 0}
     - target: {fileID: 5649088237672594504, guid: a50719a52043ff644a75b40ecea71ecb, type: 3}
       propertyPath: m_LocalPosition.z
