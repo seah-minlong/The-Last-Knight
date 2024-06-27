@@ -8,7 +8,6 @@ public class Portal : MonoBehaviour
     [SerializeField] private AudioClip portalSpawnClip;
     
     private Animator animator; 
-    private VictoryMenuScript victoryMenu; 
 
     private void Start() {
         // play sound FX 
@@ -35,6 +34,11 @@ public class Portal : MonoBehaviour
         SceneController.instance.NextLevel();
     }
 
+    public void TriggerVictoryScreen()
+    {
+        VictoryMenuScript.instance.Victory();
+    }
+
     private void Appear()
     {
         animator.Play("Portal_appear");
@@ -48,10 +52,6 @@ public class Portal : MonoBehaviour
     private void Destroy()
     {
         Destroy(gameObject); 
-    }
-
-    private void OpenVictoryScreen() {
-        victoryMenu.Victory(); 
     }
     
 }

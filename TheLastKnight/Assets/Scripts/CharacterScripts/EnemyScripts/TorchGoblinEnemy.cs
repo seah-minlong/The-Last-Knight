@@ -27,6 +27,11 @@ public class TorchGoblinEnemy : MobAIChase
                 Stagger();
             }
         } 
+        else 
+        {
+            LockMovement();
+            Defeated();
+        }
     }
 
     public void dropHeart()

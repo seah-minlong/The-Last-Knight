@@ -14,7 +14,15 @@ public class GameOverScript : MonoBehaviour
     [SerializeField] AudioClip gameOverMusic;
     [SerializeField] PlayerController playerController; 
     private static bool isGameOver = false; 
+    public static GameOverScript instance;
     
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     public void GameOver() 
     {
@@ -66,7 +74,6 @@ public class GameOverScript : MonoBehaviour
         // Wait until the scene is fully loaded
         yield return new WaitUntil(() => SceneManager.GetActiveScene().isLoaded);    
     }
-
 
     public bool IsGameOver() {
         return isGameOver; 

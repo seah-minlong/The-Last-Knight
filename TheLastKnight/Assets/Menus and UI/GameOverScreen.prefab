@@ -342,7 +342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1612865505796569079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
@@ -487,7 +487,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1612865505796569079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
@@ -914,7 +914,6 @@ GameObject:
   - component: {fileID: 4641239902573895238}
   - component: {fileID: 2643705682262230652}
   - component: {fileID: 2773009484733625544}
-  - component: {fileID: 1612865505796569079}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -984,17 +983,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1612865505796569079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6958978494884007866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121b36bb0e6af460991bd76e4151cf37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 6958978494884007866}
-  gameOverMusic: {fileID: 8300000, guid: 1fe71dfa20c90cf44b52803d94ca1b3e, type: 3}
