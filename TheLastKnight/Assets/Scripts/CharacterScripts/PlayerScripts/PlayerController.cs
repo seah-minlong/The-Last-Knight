@@ -45,10 +45,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject spawnPoint; 
   
 
-    
-
-
-
     private Material originalMaterial;
     private Coroutine flashRoutine;
 

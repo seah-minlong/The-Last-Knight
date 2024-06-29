@@ -1,20 +1,22 @@
+using System;
 using System.Collections;
+using Unity.Profiling;
 using Unity.VisualScripting;
 using UnityEngine;
 
 abstract public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Health")]
+    [Header("---------Enemy Health----------")]
     public FloatValue maxHealth;
 
-    [Header("Enemy movement")]
+    [Header("----------Enemy movement---------")]
     public float moveSpeed = 2f;
     public float collisionOffSet = 0.04f;
 
-    [Header("Attack")]
+    [Header("---------Attack---------")]
     public float attackDelay;
     
-    [Header("WhiteFlash on hit")]
+    [Header("-------WhiteFlash on hit---------")]
     [Tooltip("Material to switch to during the flash.")]
     [SerializeField] private Material flashMaterial;
 
@@ -23,6 +25,7 @@ abstract public class Enemy : MonoBehaviour
 
     private Material originalMaterial;
     private Coroutine flashRoutine;
+    private Coroutine invulnerableRoutine;
 
     [Header("------Attack Sound-------")]
     [SerializeField] private AudioClip attackSoundClip;
@@ -48,6 +51,11 @@ abstract public class Enemy : MonoBehaviour
     }
 
     public abstract void TookDamage(float damage);
+
+    public float getMaxHealth()
+    {
+        return maxHealth.initialValue;
+    }
     
     public void Defeated() 
     {

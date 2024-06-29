@@ -13,6 +13,7 @@ public class SoundMenuManager : MonoBehaviour
 
 
     [Header("--------------Audio Clip-------------")]
+    [Tooltip("AudioClip should be preloaded")]
     [SerializeField] AudioClip background;
     [SerializeField] AudioClip openPauseMenu;
 
@@ -47,14 +48,53 @@ public class SoundMenuManager : MonoBehaviour
         musicSource.Pause();
     }
 
-
     public void ResumeMusic()
     {
         musicSource.UnPause();
     }
 
-    public void PauseSound()
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
+    public void PauseButtonSound()
     {
         SFXSource.PlayOneShot(openPauseMenu);
     }
+
+    public void FadeOutAndChangeMusic(AudioClip clip)
+    {
+        StartCoroutine(FadeOutAndChangeMusicCoroutine(clip, 1.0f));
+    }
+
+    private IEnumerator FadeOutAndChangeMusicCoroutine(AudioClip newClip, float fadeDuration)
+    {
+        float currentTime = 0;
+        float startVolume = musicSource.volume;
+
+        // Fade out
+        while (currentTime < fadeDuration)
+        {
+            currentTime += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(startVolume, 0, currentTime / fadeDuration);
+            yield return null;
+        }
+
+        musicSource.Stop();
+        musicSource.clip = newClip;
+        musicSource.Play();
+        currentTime = 0;
+
+        // Fade in
+        while (currentTime < fadeDuration)
+        {
+            currentTime += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(0, startVolume, currentTime / fadeDuration);
+            yield return null;
+        }
+
+        musicSource.volume = startVolume;
+    }
+
 }
