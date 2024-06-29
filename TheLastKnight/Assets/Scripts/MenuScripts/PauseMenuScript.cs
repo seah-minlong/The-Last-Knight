@@ -12,22 +12,18 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] GameObject controlsMenuCanvas; 
     public static bool isPaused = false; 
     void Update()
-    {
-        Debug.Log("updating in pause script called"); 
-        Debug.Log(GameOverScript.instance.IsGameOver());
-        Debug.Log(VictoryMenuScript.instance.IsVictory());
-        
+    {   
         // Check for ESC key press
         if (Input.GetKeyDown(KeyCode.Escape) && !GameOverScript.instance.IsGameOver() && !VictoryMenuScript.instance.IsVictory())
         { 
             Debug.Log("Esc key pressed for pause");
             if (isPaused)
             {
-                SoundMenuManager.instance.PauseSound();
+                SoundMenuManager.instance.PauseButtonSound();
                 Resume();
             } else
             {
-                SoundMenuManager.instance.PauseSound();
+                SoundMenuManager.instance.PauseButtonSound();
                 Pause();
             }
         }

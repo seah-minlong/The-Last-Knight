@@ -11,20 +11,10 @@ public class PurpleGoblin : Bosses
 
     [Header("--------Attacks------")]
     [SerializeField] SideSlash sideSlash;
-
-    [Header("--------Victory Screen------")] 
-    [SerializeField] VictoryMenuScript victoryMenu; //to remove final boss changed 
-
-    [Header("--------SoundFX------")]
-
-    [SerializeField] private AudioClip damageSoundClip;
-    [SerializeField] private AudioClip deathSoundClip;
     
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private bool firstContact = true;
-    
-    
 
     private void FixedUpdate() {
         AIChase(chaseRadius, attackRadius);
@@ -133,31 +123,5 @@ public class PurpleGoblin : Bosses
     }
     #endregion
 
-    public override void TookDamage(float damage) {
-        
-        health -= damage;
-
-        // play sound FX 
-        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
-
-        if(alive)
-        {
-            if (health <= 0)
-            {
-                LockMovement();
-                Defeated();
-                //victoryMenu.Victory(); //to remove when final boss changed
-                alive = false;
-            } else
-            {
-                Stagger();
-            }
-        } 
-    }
-
-    public void playDeathSound()
-    {
-        // play sound FX 
-        SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform);
-    }
+    
 }
