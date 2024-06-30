@@ -45,17 +45,7 @@ abstract public class Bosses : Enemy
 
         if(alive)
         {
-            if (!Stage2 && health <= halfHealth)
-            {
-                Debug.Log("Stage 2");
-                Stage2 = true;
-
-                // Play Stage 2 Music
-                BossMusic.instance.Stage2Music();
-
-                SpawnEnemy();   
-            }
-            else if (health <= 0)
+            if (health <= 0)
             {
                 // Stop Music
                 SoundMenuManager.instance.PauseMusic();
@@ -67,6 +57,16 @@ abstract public class Bosses : Enemy
             else
             {
                 Stagger();
+                if (!Stage2 && health <= halfHealth)
+                {
+                    Debug.Log("Stage 2");
+                    Stage2 = true;
+
+                    // Play Stage 2 Music
+                    BossMusic.instance.Stage2Music();
+
+                    SpawnEnemy();   
+                }
             }
         } 
     }
