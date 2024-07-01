@@ -10,25 +10,26 @@ public class TorchGoblinEnemy : MobAIChase
     }
 
     public override void TookDamage(float damage) {
-        
-        health -= damage;
         if(alive)
         {
+            health -= damage;
+
             // play sound FX 
             SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
 
             if (health <= 0)
             {
+                alive = false;
                 LockMovement();
                 Defeated();
-                alive = false;
             } else 
             {
                 Stagger();
             }
         } 
-        else 
+        else if (canMove)
         {
+            // Enemy still can move even though movement should be locked
             LockMovement();
             Defeated();
         }

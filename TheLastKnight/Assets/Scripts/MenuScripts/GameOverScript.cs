@@ -1,12 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor;
-using UnityEditor.PackageManager;
-using Unity.VisualScripting;
-//using System.Numerics;
 
 public class GameOverScript : MonoBehaviour
 {
