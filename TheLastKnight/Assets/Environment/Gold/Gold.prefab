@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupSignal: {fileID: 11400000, guid: 42255eb64a208406ea2e482a5e09a3cd, type: 2}
   playerInventory: {fileID: 11400000, guid: 7cd96c2f0bbe94e7d8e08d4b18b079f9, type: 2}
+  collectGoldClip: {fileID: 8300000, guid: 9d886f4ac741a47cc85385b2b91b09be, type: 3}
 --- !u!61 &6966805644549213714
 BoxCollider2D:
   m_ObjectHideFlags: 0

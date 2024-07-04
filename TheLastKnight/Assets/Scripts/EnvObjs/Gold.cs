@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gold : Powerup
 {
     public Inventory playerInventory; 
+    [SerializeField] private AudioClip collectGoldClip;
     void Start() {
         powerupSignal.Raise();
     }
@@ -13,6 +14,7 @@ public class Gold : Powerup
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            SoundFXManager.instance.PlaySoundFXClip(collectGoldClip, transform);
             playerInventory.goldCount += 1; 
             powerupSignal.Raise();
             Destroy(this.gameObject);
