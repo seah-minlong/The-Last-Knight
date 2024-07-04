@@ -3,6 +3,7 @@ using UnityEngine;
 public class TorchGoblinEnemy : MobAIChase
 {
     [SerializeField] private Powerup heart;
+    [SerializeField] private Powerup gold; 
     [SerializeField] private AudioClip damageSoundClip;
     
     private void FixedUpdate() {
@@ -35,13 +36,15 @@ public class TorchGoblinEnemy : MobAIChase
         }
     }
 
-    public void dropHeart()
+    public void DropItem()
     {
         // chance that heart will drop 20%
         int rand = Random.Range(0, 100);
         if (rand <= 10) 
         {
             Instantiate(heart, transform.position, transform.rotation);
+        } else if (rand <= 100) {
+            Instantiate(gold, transform.position, transform.rotation); 
         }
     }
 }

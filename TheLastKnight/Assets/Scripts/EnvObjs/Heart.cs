@@ -25,7 +25,7 @@ public class Heart : Powerup
                 {
                     playerHealth.RuntimeValue = maxHealth;
                 }
-                powerupSingal.Raise();
+                powerupSignal.Raise();
                 Destroy(this.gameObject);
             }
         }

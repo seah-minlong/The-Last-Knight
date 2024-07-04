@@ -208,6 +208,7 @@ MonoBehaviour:
   attackRadius: 0.4
   sideSlash: {fileID: 4522900583699413679}
   heart: {fileID: 6956914474929770964, guid: 35369a3bdb126134088d5d353cd8fc66, type: 3}
+  gold: {fileID: -5705682521259627658, guid: 1ae532cad60c245aba62ed79062f73fc, type: 3}
   damageSoundClip: {fileID: 8300000, guid: 3dc75fe768a01b34aaa142e4d29ac93e, type: 3}
 --- !u!114 &589462140593605093
 MonoBehaviour:

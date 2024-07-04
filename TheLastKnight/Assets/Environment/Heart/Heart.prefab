@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb7b1247fad551419455d9cd1bdc307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupSingal: {fileID: 11400000, guid: b0cd9c77924463849a6353455fa23581, type: 2}
+  powerupSignal: {fileID: 11400000, guid: b0cd9c77924463849a6353455fa23581, type: 2}
   playerHealth: {fileID: 11400000, guid: 7f64b88b45339ad489a876c8aab3cd48, type: 2}
   heartContainers: {fileID: 11400000, guid: 6c5f86c504f452f479dd0ec82641aac2, type: 2}
   amountToIncrease: 2
