@@ -1084,6 +1084,7 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+<<<<<<< Updated upstream
   - m_Index: 112
     m_Metrics:
       m_Width: 45
@@ -1186,6 +1187,20 @@ MonoBehaviour:
       m_Y: 174
       m_Width: 45
       m_Height: 63
+=======
+  - m_Index: 119
+    m_Metrics:
+      m_Width: 18
+      m_Height: 27
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 63
+      m_HorizontalAdvance: 27
+    m_GlyphRect:
+      m_X: 696
+      m_Y: 156
+      m_Width: 18
+      m_Height: 27
+>>>>>>> Stashed changes
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -1453,6 +1468,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 63
     m_GlyphIndex: 98
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 39
+    m_GlyphIndex: 119
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: -8297033967290332626}

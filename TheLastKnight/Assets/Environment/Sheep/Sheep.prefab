@@ -194,3 +194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  meat: {fileID: 925881693824764436, guid: b9a6d249be42b47bc8d067c3b2bf4564, type: 3}

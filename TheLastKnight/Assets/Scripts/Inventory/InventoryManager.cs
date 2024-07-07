@@ -13,8 +13,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject useButton; 
     public InventoryItem currentItem; 
 
+<<<<<<< Updated upstream
      // Start is called before the first frame update
    
+=======
+>>>>>>> Stashed changes
     void OnEnable()
     {
         ClearInventorySlots(); 
@@ -84,4 +87,8 @@ public class InventoryManager : MonoBehaviour
             SetTextAndButton("", false); 
         }
     }
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
 }

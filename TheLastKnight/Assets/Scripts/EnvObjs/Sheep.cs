@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sheep : EnvObj
 {
+    [SerializeField] GameObject meat; 
     public override void TookDamage(float damage)
     {
         health -= damage;
@@ -19,4 +20,10 @@ public class Sheep : EnvObj
             }
         } 
     }
+
+    public void DropMeat()
+    {
+        Instantiate(meat, transform.position, transform.rotation);
+    }
+
 }

@@ -12,7 +12,14 @@ public class GoldManager : MonoBehaviour
 
     void Start() {
         Debug.Log("start for gold manager is called"); 
+<<<<<<< Updated upstream
         goldItem.numberHeld = 0; 
+=======
+        if (PlayerController.GetRespawnCount() == 0)
+        {
+            goldItem.numberHeld = 0; 
+        }
+>>>>>>> Stashed changes
         UpdateGoldCountText(); 
     }
 
