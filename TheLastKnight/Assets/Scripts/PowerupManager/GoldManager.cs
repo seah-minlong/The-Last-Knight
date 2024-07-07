@@ -6,15 +6,24 @@ using TMPro;
 public class GoldManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI goldCountText;
-    [SerializeField] Inventory playerInventory; 
+    [SerializeField] InventoryItem goldItem; 
+    [SerializeField] private AudioClip collectGoldClip;
+
 
     void Start() {
-        playerInventory.goldCount = 0; 
+        Debug.Log("start for gold manager is called"); 
+        goldItem.numberHeld = 0; 
         UpdateGoldCountText(); 
     }
 
     public void UpdateGoldCountText()
     {
-        goldCountText.text = "" + playerInventory.goldCount;
+        Debug.Log("update gold text"); 
+        goldCountText.text = "" + goldItem.numberHeld;
+    }
+
+    public void ReceivedGold() 
+    {
+        SoundFXManager.instance.PlaySoundFXClip(collectGoldClip, transform);
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8827087085824529783}
   - component: {fileID: 1905920456395501297}
   - component: {fileID: 8988892935353285426}
+  - component: {fileID: 8666457034568874042}
   m_Layer: 0
   m_Name: InteractiveSign
   m_TagString: Untagged
@@ -164,5 +165,21 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.3, y: 0.3}
+  m_Size: {x: 0.35, y: 0.35}
   m_Direction: 0
+--- !u!114 &8666457034568874042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685274719070263371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c867791a0bca4e309a54f21194433b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogue: Hello, Welcome to The Last Knight. Defeat The Boss to win!
+  playerInRange: 0

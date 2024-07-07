@@ -68,6 +68,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3200452963278702535}
+        m_TargetAssemblyTypeName: GoldManager, Assembly-CSharp
+        m_MethodName: ReceivedGold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3200452963278702535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldCountText: {fileID: 4422285244192370925}
-  playerInventory: {fileID: 11400000, guid: 7cd96c2f0bbe94e7d8e08d4b18b079f9, type: 2}
+  goldItem: {fileID: 11400000, guid: 82d0666c532654e17a682f8f94f08019, type: 2}
+  collectGoldClip: {fileID: 0}
 --- !u!1 &6742658923666215658
 GameObject:
   m_ObjectHideFlags: 0

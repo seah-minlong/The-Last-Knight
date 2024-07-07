@@ -8,6 +8,7 @@ TagManager:
   - Env obj
   - SpawnPoint
   - Pawn
+  - Gold
   layers:
   - Default
   - TransparentFX

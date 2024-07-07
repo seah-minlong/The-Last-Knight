@@ -9,8 +9,8 @@ public class InteractiveSign : MonoBehaviour
 {
     [SerializeField] GameObject dialogueBox; 
     [SerializeField] TextMeshProUGUI dialogueText; 
-    [SerializeField] string dialogue; 
-    [SerializeField] bool playerInRange; 
+    public string dialogue; 
+    public bool playerInRange; 
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +36,7 @@ public class InteractiveSign : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             playerInRange = true; 
+            UpdateDialogue(); 
         }
     }
 
@@ -45,6 +46,11 @@ public class InteractiveSign : MonoBehaviour
             playerInRange = false;  
             dialogueBox.SetActive(false); 
         }
+    }
+
+    protected virtual void UpdateDialogue()
+    {
+        // This method can be overridden by subclasses to customize dialogue
     }
 
 }

@@ -5,9 +5,11 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenuCanvas; 
     [SerializeField] GameObject controlsMenuCanvas; 
+    [SerializeField] GameObject inventoryMenuCanvas; 
+
     public static bool isPaused = false; 
     void Update()
-    {   
+    {   Debug.Log("update frm pause menu calles"); 
         // Check for ESC key press
         if (Input.GetKeyDown(KeyCode.Escape) && !GameOverScript.instance.IsGameOver() && !VictoryMenuScript.instance.IsVictory())
         { 
@@ -28,6 +30,9 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuCanvas.SetActive(true); 
         if (controlsMenuCanvas.activeSelf) {
             controlsMenuCanvas.SetActive(false); 
+        }
+        if (inventoryMenuCanvas.activeSelf) {
+            inventoryMenuCanvas.SetActive(false); 
         }
         Time.timeScale = 0;
         isPaused = true;

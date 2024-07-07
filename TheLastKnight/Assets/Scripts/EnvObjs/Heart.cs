@@ -13,7 +13,7 @@ public class Heart : Powerup
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            float maxHealth = heartContainers.initialValue * 2f;
+            float maxHealth = heartContainers.RuntimeValue * 2f;
             // No effect if player at max health
             if (playerHealth.RuntimeValue != maxHealth)
             {

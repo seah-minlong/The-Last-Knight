@@ -11,27 +11,30 @@ public class HeartManager : MonoBehaviour
     public Sprite emptyHeart;
     public FloatValue heartContainers;
     public FloatValue playerCurrentHealth;
+    [SerializeField] int initialNumberOfHeartContainers; 
 
     // Start is called before the first frame update
     void Start()
     {
+        heartContainers.RuntimeValue = initialNumberOfHeartContainers; 
         playerCurrentHealth.RuntimeValue = playerCurrentHealth.initialValue; 
         InitHearts();
     }
 
     public void InitHearts() 
     {
-        for (int i = 0; i < heartContainers.initialValue; i++) 
+        for (int i = 0; i < heartContainers.RuntimeValue; i++) 
         {
             hearts[i].gameObject.SetActive(true);
             hearts[i].sprite = fullHeart;
         }
+        UpdateHearts(); 
     }
 
     public void UpdateHearts()
     {
         float tempHealth = playerCurrentHealth.RuntimeValue / 2;
-        for (int i = 0; i < heartContainers.initialValue; i++) 
+        for (int i = 0; i < heartContainers.RuntimeValue; i++) 
         {
             if (i <= tempHealth  - 1) 
             {
@@ -49,5 +52,12 @@ public class HeartManager : MonoBehaviour
                 hearts[i].sprite = halfFullHeart;
             }
         }
+    }
+
+    public void IncreaseHeartContainers(int amount)
+    {
+        heartContainers.RuntimeValue += amount;
+        playerCurrentHealth.RuntimeValue += amount * 2; // Increase current health accordingly
+        InitHearts();
     }
 }

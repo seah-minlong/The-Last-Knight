@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4344729596673964888}
   - component: {fileID: 325819180923143008}
-  - component: {fileID: -5705682521259627658}
   - component: {fileID: 6966805644549213714}
+  - component: {fileID: -3455105617582202198}
+  - component: {fileID: 5166147622561388583}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Untagged
@@ -86,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5705682521259627658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6779185675877506460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e83a43e1c13354ba5853154b4dc5fd44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerupSignal: {fileID: 11400000, guid: 42255eb64a208406ea2e482a5e09a3cd, type: 2}
-  playerInventory: {fileID: 11400000, guid: 7cd96c2f0bbe94e7d8e08d4b18b079f9, type: 2}
-  collectGoldClip: {fileID: 8300000, guid: 86f2eed02eff349428fc09ecd95080cc, type: 3}
 --- !u!61 &6966805644549213714
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +132,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39467335, y: 0.37817597}
   m_EdgeRadius: 0
+--- !u!114 &-3455105617582202198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779185675877506460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45faab7dfad3d4762b6c189111c2ebbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: bd9b232b52ae243a89ea53da813f18e0, type: 2}
+  thisItem: {fileID: 11400000, guid: 82d0666c532654e17a682f8f94f08019, type: 2}
+  receivedItemSignal: {fileID: 11400000, guid: 42255eb64a208406ea2e482a5e09a3cd, type: 2}
+--- !u!114 &5166147622561388583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779185675877506460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83a43e1c13354ba5853154b4dc5fd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupSignal: {fileID: 11400000, guid: 42255eb64a208406ea2e482a5e09a3cd, type: 2}
