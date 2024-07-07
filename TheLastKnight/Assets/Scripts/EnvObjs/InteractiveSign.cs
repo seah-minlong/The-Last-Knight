@@ -9,36 +9,23 @@ public class InteractiveSign : MonoBehaviour
 {
     [SerializeField] GameObject dialogueBox; 
     [SerializeField] TextMeshProUGUI dialogueText; 
-<<<<<<< Updated upstream
     public string dialogue; 
     public bool playerInRange; 
-=======
-<<<<<<< Updated upstream
-    [SerializeField] string dialogue; 
-    [SerializeField] bool playerInRange; 
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-=======
-    public string dialogue; 
-    public bool playerInRange; 
-    
->>>>>>> Stashed changes
     // Update is called once per frame
-    protected void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             if (dialogueBox.activeInHierarchy)
             {
-                UpdateDialogue(); 
                 dialogueBox.SetActive(false); 
             } else {
-                UpdateDialogue(); 
                 dialogueBox.SetActive(true); 
                 dialogueText.text = dialogue; 
             }

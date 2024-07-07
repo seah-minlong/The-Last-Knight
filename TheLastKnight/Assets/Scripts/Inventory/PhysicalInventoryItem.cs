@@ -7,7 +7,6 @@ public class PhysicalInventoryItem : MonoBehaviour
     [SerializeField] private PlayerInventory playerInventory; 
     [SerializeField] private InventoryItem thisItem; 
     public MySignal receivedItemSignal; 
-<<<<<<< Updated upstream
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +18,6 @@ public class PhysicalInventoryItem : MonoBehaviour
     {
         
     }
-=======
->>>>>>> Stashed changes
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,12 +26,8 @@ public class PhysicalInventoryItem : MonoBehaviour
             AddItemToInventory(); 
              if (thisItem.itemName == "Gold")
             {
-<<<<<<< Updated upstream
                 Debug.Log("inside gold inven item"); 
                 receivedItemSignal.Raise(); 
-=======
-                receivedItemSignal.Raise(); //for the sound
->>>>>>> Stashed changes
             }
             Destroy(this.gameObject); 
         }

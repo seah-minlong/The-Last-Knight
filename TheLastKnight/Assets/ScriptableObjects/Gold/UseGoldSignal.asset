@@ -12,11 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd844cd15d4fa0449c77e5ae0e44ab1, type: 3}
   m_Name: UseGoldSignal
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:TheLastKnight/Assets/ScriptableObjects/ReceivedCoin.asset
   listeners: []
-=======
-  myInventory:
-  - {fileID: 11400000, guid: 3cf8a0567930042849ec2b5469003fb0, type: 2}
-  - {fileID: 11400000, guid: 82d0666c532654e17a682f8f94f08019, type: 2}
-  - {fileID: 11400000, guid: 8721f6d53ed8742a3baaad9eea5b9316, type: 2}
->>>>>>> Stashed changes:TheLastKnight/Assets/ScriptableObjects/Inventory/GeneralPlayerInventory.asset

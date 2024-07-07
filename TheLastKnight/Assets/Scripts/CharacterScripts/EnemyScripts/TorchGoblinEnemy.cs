@@ -43,7 +43,7 @@ public class TorchGoblinEnemy : MobAIChase
         if (rand <= 10) 
         {
             Instantiate(heart, transform.position, transform.rotation);
-        } else if (rand <= 20) {
+        } else if (rand <= 100) {
             Instantiate(gold, transform.position, transform.rotation); 
         }
     }

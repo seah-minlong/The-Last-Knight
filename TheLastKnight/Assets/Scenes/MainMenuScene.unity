@@ -6167,18 +6167,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1138201257}
-        m_TargetAssemblyTypeName: ResetPlayerInventoryUponGameStart, Assembly-CSharp
-        m_MethodName: ResetInventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &20023042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6530,10 +6518,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7190,10 +7175,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7677,10 +7659,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7870,10 +7849,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -39675,10 +39651,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -40153,51 +40126,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3048906554967062428, guid: 4268583ceea828b44830de73a7e4a1a5, type: 3}
   m_PrefabInstance: {fileID: 326864626}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1138201256
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1138201258}
-  - component: {fileID: 1138201257}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1138201257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138201256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8b6f977292649898e1dba20f4164c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: bd9b232b52ae243a89ea53da813f18e0, type: 2}
---- !u!4 &1138201258
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138201256}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.741508, y: 8.600135, z: 0.08421302}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1143826836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40250,10 +40178,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -40832,10 +40757,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -44068,10 +43990,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
-    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -44755,7 +44674,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1138201258}
   - {fileID: 1344520773}
   - {fileID: 197493123}
   - {fileID: 24481681}
