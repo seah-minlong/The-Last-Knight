@@ -35,6 +35,7 @@ public class VictoryMenuScript : MonoBehaviour
     }
 
     public void ToMainMenu() {
+        PlayerPrefs.SetInt("RespawnCount", 0); 
         SceneManager.LoadScene("MainMenuScene"); 
         Time.timeScale = 1; 
         isVictory = false; 

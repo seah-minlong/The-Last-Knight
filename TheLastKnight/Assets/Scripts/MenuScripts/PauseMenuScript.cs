@@ -47,6 +47,7 @@ public class PauseMenuScript : MonoBehaviour
     }
 
     public void MainMenu() {
+        PlayerPrefs.SetInt("RespawnCount", 0); 
         SceneManager.LoadScene("MainMenuScene"); 
         Time.timeScale = 1; 
         isPaused = false; 

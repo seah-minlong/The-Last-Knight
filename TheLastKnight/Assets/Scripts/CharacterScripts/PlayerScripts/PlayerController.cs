@@ -282,8 +282,14 @@ public class PlayerController : MonoBehaviour
         return checkpointPos; 
      }
 
-     public static int GetRespawnCount() {
+     public static int GetRespawnCount() 
+     {
         return respawnCount; 
+     }
+
+     public static void ResetRespawnCount() 
+     {
+        respawnCount = 0; 
      }
     #endregion 
 
