@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c867791a0bca4e309a54f21194433b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 0}
+  dialogueBox: {fileID: 571828915276039970, guid: 405c936843ab64c92a0b2fd6b9efb4a1, type: 3}
   dialogueText: {fileID: 0}
   contextClue: {fileID: 600915174176053373}
   dialogue: Hello, Welcome to The Last Knight. Defeat The Boss to win!
@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6567871834377544381, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
