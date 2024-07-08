@@ -6518,7 +6518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7175,7 +7178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7659,7 +7665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7849,7 +7858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -39651,7 +39663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -40054,6 +40069,51 @@ Transform:
   - {fileID: 1143826837}
   m_Father: {fileID: 24481681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083842120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083842122}
+  - component: {fileID: 1083842121}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1083842121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083842120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccebccf56ccc244f39eb8b893e9adbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: bd9b232b52ae243a89ea53da813f18e0, type: 2}
+--- !u!4 &1083842122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083842120}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.763753, y: 9.8225, z: -0.09058403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1125240830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40178,7 +40238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -40757,7 +40820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -43990,7 +44056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 775767549155998238, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 8080865490977616648, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    - {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -44674,6 +44743,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1083842122}
   - {fileID: 1344520773}
   - {fileID: 197493123}
   - {fileID: 24481681}

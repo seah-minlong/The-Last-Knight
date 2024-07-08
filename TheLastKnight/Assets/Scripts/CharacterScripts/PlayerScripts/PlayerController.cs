@@ -281,6 +281,10 @@ public class PlayerController : MonoBehaviour
      public Vector2 GetCheckpointPos() {
         return checkpointPos; 
      }
+
+     public static int GetRespawnCount() {
+        return respawnCount; 
+     }
     #endregion 
 
     private void OnDisable()

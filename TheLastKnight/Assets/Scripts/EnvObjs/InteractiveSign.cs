@@ -7,7 +7,7 @@ using TMPro;
 
 public class InteractiveSign : MonoBehaviour
 {
-    [SerializeField] GameObject dialogueBox; 
+    [SerializeField] protected GameObject dialogueBox; 
     [SerializeField] TextMeshProUGUI dialogueText; 
     public string dialogue; 
     public bool playerInRange; 
@@ -18,14 +18,16 @@ public class InteractiveSign : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             if (dialogueBox.activeInHierarchy)
             {
+                UpdateDialogue(); 
                 dialogueBox.SetActive(false); 
             } else {
+                UpdateDialogue(); 
                 dialogueBox.SetActive(true); 
                 dialogueText.text = dialogue; 
             }
@@ -40,13 +42,18 @@ public class InteractiveSign : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) 
+   private void OnTriggerExit2D(Collider2D other) 
+{
+    if (other.CompareTag("Player")) 
     {
-        if (other.CompareTag("Player")) {
-            playerInRange = false;  
-            dialogueBox.SetActive(false); 
+        playerInRange = false;
+        if (dialogueBox != null) 
+        {
+            dialogueBox.SetActive(false);
         }
     }
+}
+
 
     protected virtual void UpdateDialogue()
     {

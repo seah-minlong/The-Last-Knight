@@ -16,8 +16,14 @@ public class HeartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        heartContainers.RuntimeValue = initialNumberOfHeartContainers; 
-        playerCurrentHealth.RuntimeValue = playerCurrentHealth.initialValue; 
+        if (PlayerController.GetRespawnCount() == 0)
+        {
+            heartContainers.RuntimeValue = initialNumberOfHeartContainers; 
+            playerCurrentHealth.RuntimeValue = playerCurrentHealth.initialValue; 
+        } else {
+            playerCurrentHealth.RuntimeValue = heartContainers.RuntimeValue * 2f; 
+        }
+        
         InitHearts();
     }
 
