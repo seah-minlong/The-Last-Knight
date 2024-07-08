@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 2.72, y: 2.922, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4682354152075679897}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8827087085824529783
@@ -181,5 +182,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 0}
   dialogueText: {fileID: 0}
+  contextClue: {fileID: 600915174176053373}
   dialogue: Hello, Welcome to The Last Knight. Defeat The Boss to win!
-  playerInRange: 0
+--- !u!1001 &6013191195306113728
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4865059333426939905}
+    m_Modifications:
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567871834377544381, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_Name
+      value: ContextClue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567871834377544381, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+--- !u!1 &600915174176053373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6567871834377544381, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+  m_PrefabInstance: {fileID: 6013191195306113728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4682354152075679897 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1407433996827222617, guid: 6965ddf96f139244bb4632a3c3d287b9, type: 3}
+  m_PrefabInstance: {fileID: 6013191195306113728}
+  m_PrefabAsset: {fileID: 0}

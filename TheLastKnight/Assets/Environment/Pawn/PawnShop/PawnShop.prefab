@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3882025678385906759
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: buyButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: costOfItem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: playerItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 82d0666c532654e17a682f8f94f08019, type: 2}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: buyItemSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: fa073483cde0945529bd344b0cf99228, type: 2}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: itemSoldByPawn
+      value: more heart containers
+      objectReference: {fileID: 0}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: healthContainers
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c5f86c504f452f479dd0ec82641aac2, type: 2}
+    - target: {fileID: 585292291931963183, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: boughtFromPawnSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: fa073483cde0945529bd344b0cf99228, type: 2}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.016143506
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794045668134323987, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238974180493246343, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_Name
+      value: PawnShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238974180493246343, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250529419510610798, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6e4413effed4f8d4cb59de3e8e6a654f, type: 2}
+    - target: {fileID: 2088356663021179725, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 129139125, guid: 505995809981e7c40835d511e894d7ac, type: 3}
+    - target: {fileID: 2423879707061661920, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423879707061661920, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7503864122442217548, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238974180493246343, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2345043143400902479}
+    - targetCorrespondingSourceObject: {fileID: 1238974180493246343, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1039464148996530982}
+    - targetCorrespondingSourceObject: {fileID: 1238974180493246343, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2837924194556275856}
+  m_SourcePrefab: {fileID: 100100000, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+--- !u!1 &2661066330530986944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238974180493246343, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+  m_PrefabInstance: {fileID: 3882025678385906759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2345043143400902479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661066330530986944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5f9e13db67a84489c38a4bda464647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 0}
+  dialogueText: {fileID: 0}
+  contextClue: {fileID: 6496348360176768751}
+  dialogue: 
+  playerItem: {fileID: 11400000, guid: 82d0666c532654e17a682f8f94f08019, type: 2}
+  itemSoldByPawn: more heart containers
+  costOfItem: 3
+  boughtFromPawnSignal: {fileID: 11400000, guid: 3b00086c470c9441a8b879a18078fda4, type: 2}
+  healthContainers: {fileID: 11400000, guid: 6c5f86c504f452f479dd0ec82641aac2, type: 2}
+  increaseHeartClip: {fileID: 8300000, guid: e99070c8286ca44498c743061213a42e, type: 3}
+--- !u!114 &1039464148996530982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661066330530986944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de01234703ff6f418254e1023cc65e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: fa073483cde0945529bd344b0cf99228, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2837924194556275856}
+        m_TargetAssemblyTypeName: RaiseSignalOnClick, Assembly-CSharp
+        m_MethodName: RaisedSignal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2837924194556275856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661066330530986944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42f681107f7c47a8bf68b2defec90b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedSignal: {fileID: 11400000, guid: 3b00086c470c9441a8b879a18078fda4, type: 2}
+--- !u!1 &6496348360176768751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8068220325258859176, guid: 52ac6d04abff740219abf99e5e9ef05f, type: 3}
+  m_PrefabInstance: {fileID: 3882025678385906759}
+  m_PrefabAsset: {fileID: 0}

@@ -9,7 +9,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public static bool isPaused = false; 
     void Update()
-    {   Debug.Log("update frm pause menu calles"); 
+    {   
         // Check for ESC key press
         if (Input.GetKeyDown(KeyCode.Escape) && !GameOverScript.instance.IsGameOver() && !VictoryMenuScript.instance.IsVictory())
         { 

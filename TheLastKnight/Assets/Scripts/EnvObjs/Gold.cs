@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class Gold : Powerup
 {
-    //dont delete its for instantiating the gold object via inheriting powerup signal 
+    [SerializeField] private AudioClip collectGoldClip;
+
+    public void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.CompareTag("Player") && !other.isTrigger)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(collectGoldClip, transform);
+        }
+    }
 }

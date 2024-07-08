@@ -25,4 +25,9 @@ public class Sheep : EnvObj
     {
         Instantiate(meat, transform.position, transform.rotation);
     }
+
+    public void RemoveFlip()
+    {
+        spriteRenderer.flipX = false;
+    }
 }

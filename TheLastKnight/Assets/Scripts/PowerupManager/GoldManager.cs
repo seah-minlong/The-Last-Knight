@@ -7,7 +7,6 @@ public class GoldManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI goldCountText;
     [SerializeField] InventoryItem goldItem; 
-    [SerializeField] private AudioClip collectGoldClip;
 
 
     void Start() {
@@ -23,10 +22,5 @@ public class GoldManager : MonoBehaviour
     {
         Debug.Log("update gold text"); 
         goldCountText.text = "" + goldItem.numberHeld;
-    }
-
-    public void ReceivedGold() 
-    {
-        SoundFXManager.instance.PlaySoundFXClip(collectGoldClip, transform);
     }
 }

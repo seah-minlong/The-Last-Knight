@@ -48,24 +48,6 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.9
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1.1
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -89,18 +71,6 @@ AnimationClip:
       value: {fileID: -1424929727, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
     - time: 0.5
       value: {fileID: -446004696, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - time: 0.6
-      value: {fileID: 605402273, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - time: 0.7
-      value: {fileID: 887726693, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - time: 0.8
-      value: {fileID: 62176813, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - time: 0.9
-      value: {fileID: 1923272497, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - time: 1
-      value: {fileID: 1938785371, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - time: 1.1
-      value: {fileID: -1564159922, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -138,18 +108,12 @@ AnimationClip:
     - {fileID: 937396528, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
     - {fileID: -1424929727, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
     - {fileID: -446004696, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - {fileID: 605402273, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - {fileID: 887726693, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - {fileID: 62176813, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - {fileID: 1923272497, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - {fileID: 1938785371, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
-    - {fileID: -1564159922, guid: df42fc1a0dae7d74ab77ee3a91196caa, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2
+    m_StopTime: 0.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -196,24 +160,6 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.9
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1.1
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -240,14 +186,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.9
-    functionName: playSwordClip2
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.1
+  - time: 0.5
     functionName: UnlockMovement
     data: 
     objectReferenceParameter: {fileID: 0}

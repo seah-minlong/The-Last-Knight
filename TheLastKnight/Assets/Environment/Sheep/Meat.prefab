@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4124781560392219369}
   - component: {fileID: 9148367414292195732}
   - component: {fileID: 5761877941993360149}
+  - component: {fileID: 1989298960949801002}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Untagged
@@ -146,3 +147,17 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: bd9b232b52ae243a89ea53da813f18e0, type: 2}
   thisItem: {fileID: 11400000, guid: 37ab0320c1728414e8c612734a4b552e, type: 2}
   receivedItemSignal: {fileID: 0}
+--- !u!114 &1989298960949801002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137577301418039985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6fbb99db862dd45b82b2f32c25650b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupSignal: {fileID: 0}
+  collectMeatClip: {fileID: 8300000, guid: 052bf235e2cf3e449b01058cbc94be05, type: 3}
