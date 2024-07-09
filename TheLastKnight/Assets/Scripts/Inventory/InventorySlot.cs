@@ -8,6 +8,7 @@ public class InventorySlot : MonoBehaviour
 {
     [Header("UI Stuff to change")]
     [SerializeField] private TextMeshProUGUI itemNumberText; 
+    [SerializeField] private TextMeshProUGUI itemNameText; 
     [SerializeField] private Image itemImage; 
 
     [Header("Variables from the item")] 
@@ -23,6 +24,7 @@ public class InventorySlot : MonoBehaviour
         {
             itemImage.sprite = thisItem.itemImage; 
             itemNumberText.text = "" + thisItem.numberHeld; 
+            itemNameText.text = "" + thisItem.itemName; 
         }
     }
 
