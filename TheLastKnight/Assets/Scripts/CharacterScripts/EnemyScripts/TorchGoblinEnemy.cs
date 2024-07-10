@@ -7,7 +7,10 @@ public class TorchGoblinEnemy : MobAIChase
     [SerializeField] private AudioClip damageSoundClip;
     
     private void FixedUpdate() {
-        AIChase(getChaseRadius(), getAttackRadius());
+        if (alive) 
+        {
+            AIChase(getChaseRadius(), getAttackRadius());
+        }
     }
 
     public override void TookDamage(float damage) {
