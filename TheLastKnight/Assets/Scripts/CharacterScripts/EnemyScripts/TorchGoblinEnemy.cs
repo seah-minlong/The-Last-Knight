@@ -31,12 +31,6 @@ public class TorchGoblinEnemy : MobAIChase
                 Stagger();
             }
         } 
-        else if (canMove)
-        {
-            // Enemy still can move even though movement should be locked
-            LockMovement();
-            Defeated();
-        }
     }
 
     public void DropItem()
