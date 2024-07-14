@@ -25,7 +25,4 @@ public class SceneController : MonoBehaviour
     public void LoadScene(String sceneName) {
         SceneManager.LoadSceneAsync(sceneName); 
     }
-
-    
-    
 }
