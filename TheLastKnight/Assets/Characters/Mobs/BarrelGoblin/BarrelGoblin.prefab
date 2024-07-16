@@ -201,12 +201,13 @@ MonoBehaviour:
   attackDelay: 1
   flashMaterial: {fileID: 2100000, guid: 7523a47fe17b93f4fb9d4df9290cd774, type: 2}
   flashDuration: 0.2
-  attackSoundClip: {fileID: 8300000, guid: a054039d685476f4d85c4ba923ce1ad8, type: 3}
+  attackSoundClip: {fileID: 8300000, guid: c508f4e93f0d14e48b526110368be3ad, type: 3}
   chaseRadius: 4
   attackRadius: 1
   sideSlash: {fileID: 0}
   heart: {fileID: 6956914474929770964, guid: 35369a3bdb126134088d5d353cd8fc66, type: 3}
   gold: {fileID: 5166147622561388583, guid: 1ae532cad60c245aba62ed79062f73fc, type: 3}
+  damageSoundClip: {fileID: 8300000, guid: c508f4e93f0d14e48b526110368be3ad, type: 3}
 --- !u!114 &4680327708221639934
 MonoBehaviour:
   m_ObjectHideFlags: 0

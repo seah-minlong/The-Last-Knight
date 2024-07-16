@@ -4,6 +4,7 @@ public class BarrelGoblinEnemy : MobAIChase
 {
     [SerializeField] private Powerup heart;
     [SerializeField] private Powerup gold; 
+    [SerializeField] private AudioClip damageSoundClip;
     
     private void FixedUpdate() {
         if (alive) 
@@ -18,17 +19,14 @@ public class BarrelGoblinEnemy : MobAIChase
             health -= damage;
 
             // play sound FX 
-            //SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+            SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
 
             if (health <= 0)
             {
                 alive = false;
                 LockMovement();
                 Defeated();
-            } else 
-            {
-                //Stagger();
-            }
+            } 
         } 
     }
 
