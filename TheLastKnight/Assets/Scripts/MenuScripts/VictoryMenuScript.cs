@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
@@ -10,6 +11,11 @@ public class VictoryMenuScript : MonoBehaviour
     [SerializeField] AudioClip victoryMusic;
     private static bool isVictory = false;
     public static VictoryMenuScript instance;
+
+    void Start() 
+    {
+        isVictory = false; 
+    }
 
     private void Awake()
     {
