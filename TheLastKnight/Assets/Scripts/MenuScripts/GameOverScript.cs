@@ -9,6 +9,11 @@ public class GameOverScript : MonoBehaviour
     [SerializeField] PlayerController playerController; 
     private static bool isGameOver = false; 
     public static GameOverScript instance;
+
+    void Start()
+    {
+        isGameOver = false; 
+    }
     
     private void Awake()
     {
