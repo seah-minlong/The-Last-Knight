@@ -67,6 +67,28 @@ public class SoundMenuManager : MonoBehaviour
     {
         StartCoroutine(FadeOutAndChangeMusicCoroutine(clip, 1.0f));
     }
+    
+    public void FadeOutAndPauseMusic() 
+    {
+        StartCoroutine(FadeOutAndPauseMusicCoroutine(1.0f));
+    }
+
+    private IEnumerator FadeOutAndPauseMusicCoroutine(float fadeDuration)
+    {
+        float currentTime = 0;
+        float startVolume = musicSource.volume;
+
+        // Fade out
+        while (currentTime < fadeDuration)
+        {
+            currentTime += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(startVolume, 0, currentTime / fadeDuration);
+            yield return null;
+        }
+
+        musicSource.Pause(); // Use Pause instead of Stop to keep the current clip
+        musicSource.volume = startVolume; // Reset volume to the start volume
+    }
 
     private IEnumerator FadeOutAndChangeMusicCoroutine(AudioClip newClip, float fadeDuration)
     {

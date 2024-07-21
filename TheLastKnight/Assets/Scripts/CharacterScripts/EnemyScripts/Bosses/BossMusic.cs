@@ -36,7 +36,7 @@ public class BossMusic : MonoBehaviour
     private void StartBattle()
     {
         Debug.Log("StartBattle");
-
+        
         // Change music when boss battle starts
         SoundMenuManager.instance.FadeOutAndChangeMusic(BossBattleMusicStage1);
     }

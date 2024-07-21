@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391bfc131ef354c9f9b55e6dfcf8bdcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: {fileID: 11400000, guid: d7be88c1a4bd8b741abac10a4d54c97f, type: 2}
+  maxHealth: {fileID: 11400000, guid: 6c48462136f0e8c4f9ead3a682c62e2b, type: 2}
   moveSpeed: 1.25
   collisionOffSet: 0.04
   attackDelay: 1
