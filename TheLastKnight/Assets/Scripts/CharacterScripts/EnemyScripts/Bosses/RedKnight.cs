@@ -8,9 +8,11 @@ public class RedKnight : Bosses
     [Header("--------Boss Properties------")]
     [SerializeField] float chaseRadius = 4;
     [SerializeField] float attackRadius = 2;
+    
 
     [Header("--------Attacks------")]
     [SerializeField] SideSlash sideSlash;
+    [SerializeField] private Enemy bomb;
     
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -123,5 +125,46 @@ public class RedKnight : Bosses
     }
     #endregion
 
-    
+    public override void TookDamage(float damage) {
+        
+        health -= damage;
+
+        // play sound FX 
+        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+
+        if(alive)
+        {
+            if (health <= 0)
+            {
+                // Stop Music
+                SoundMenuManager.instance.PauseMusic();
+
+                LockMovement();
+                Defeated();
+                alive = false;
+            } 
+            else
+            {
+                Stagger();
+                SpawnBomb();   
+                if (!Stage2 && health <= halfHealth)
+                {
+                    Debug.Log("Stage 2");
+                    Stage2 = true;
+
+                    // Play Stage 2 Music
+                    BossMusic.instance.Stage2Music();
+
+                    SpawnEnemy(); 
+                }
+            }
+        } 
+    }
+
+    private void SpawnBomb()
+    {
+        int rand = Random.Range(0, spawnPositionList.Count);
+        Vector3 spawnPosition = spawnPositionList[rand];
+        Instantiate(bomb, spawnPosition, Quaternion.identity);
+    }
 }

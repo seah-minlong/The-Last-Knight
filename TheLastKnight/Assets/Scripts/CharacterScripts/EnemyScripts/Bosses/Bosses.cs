@@ -10,15 +10,15 @@ abstract public class Bosses : Enemy
     [SerializeField] Vector3 portalPosition = new Vector3();
 
     [Header("--------SoundFX------")]
-    [SerializeField] private AudioClip damageSoundClip;
-    [SerializeField] private AudioClip deathSoundClip;
+    [SerializeField] protected AudioClip damageSoundClip;
+    [SerializeField] protected AudioClip deathSoundClip;
 
     [Header("--------Battle---------")]
-    [SerializeField] private Enemy enemy;
+    [SerializeField] protected Enemy enemy;
     
-    private List<Vector3> spawnPositionList;
-    private float halfHealth;
-    private bool Stage2 = false;
+    protected List<Vector3> spawnPositionList;
+    protected float halfHealth;
+    protected bool Stage2 = false;
     
     private void Awake()
     {
@@ -35,41 +35,6 @@ abstract public class Bosses : Enemy
     {
         Instantiate(portal, portalPosition, transform.rotation);
     }
-    
-    public override void TookDamage(float damage) {
-        
-        health -= damage;
-
-        // play sound FX 
-        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
-
-        if(alive)
-        {
-            if (health <= 0)
-            {
-                // Stop Music
-                SoundMenuManager.instance.PauseMusic();
-
-                LockMovement();
-                Defeated();
-                alive = false;
-            } 
-            else
-            {
-                Stagger();
-                if (!Stage2 && health <= halfHealth)
-                {
-                    Debug.Log("Stage 2");
-                    Stage2 = true;
-
-                    // Play Stage 2 Music
-                    BossMusic.instance.Stage2Music();
-
-                    SpawnEnemy();   
-                }
-            }
-        } 
-    }
 
     public void playDeathSound()
     {
@@ -77,7 +42,7 @@ abstract public class Bosses : Enemy
         SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform);
     }
 
-    private void SpawnEnemy()
+    protected void SpawnEnemy()
     {
         for (int i = 0; i < spawnPositionList.Count; i++) 
         {
