@@ -14,10 +14,20 @@ public class RedKnight : Bosses
     [SerializeField] SideSlash sideSlash;
     [SerializeField] private Enemy bomb;
     
+    private List<Vector3> bombPositionList;
     private ContactFilter2D movementFilter;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private bool firstContact = true;
 
+    private new void Awake() {
+        base.Awake();
+        bombPositionList = new List<Vector3>();
+
+        foreach (Transform bombPosition in transform.Find("bombPositions"))
+        {
+            bombPositionList.Add(bombPosition.position);
+        }
+    }
     private void FixedUpdate() {
         AIChase(chaseRadius, attackRadius);
     }
@@ -163,8 +173,8 @@ public class RedKnight : Bosses
 
     private void SpawnBomb()
     {
-        int rand = Random.Range(0, spawnPositionList.Count);
-        Vector3 spawnPosition = spawnPositionList[rand];
-        Instantiate(bomb, spawnPosition, Quaternion.identity);
+        int rand = Random.Range(0, bombPositionList.Count);
+        Vector3 bombPosition = bombPositionList[rand];
+        Instantiate(bomb, bombPosition, Quaternion.identity);
     }
 }

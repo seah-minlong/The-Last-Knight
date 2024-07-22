@@ -20,7 +20,7 @@ abstract public class Bosses : Enemy
     protected float halfHealth;
     protected bool Stage2 = false;
     
-    private void Awake()
+    protected void Awake()
     {
         halfHealth = getMaxHealth() / 2;
         spawnPositionList = new List<Vector3>();
