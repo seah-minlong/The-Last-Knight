@@ -26,6 +26,8 @@ public class Portal : MonoBehaviour
 
             // go next level -> Scene changes once Disappear animation finishes
             Disappear();
+            PlayerController.SetIsNextLevel(true);
+            Debug.Log("player game level is : " + PlayerController.isNextLevel);  
         }
     }
 

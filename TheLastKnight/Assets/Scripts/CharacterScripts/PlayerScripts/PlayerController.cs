@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
     [Header("-------Spawn/Respawn-------")]
     [SerializeField] GameObject player; 
     [SerializeField] GameObject spawnPoint; 
-  
 
     private Material originalMaterial;
     private Coroutine flashRoutine;
@@ -58,6 +57,7 @@ public class PlayerController : MonoBehaviour
     private bool alive = true;
     private static Vector2 checkpointPos = Vector2.zero; 
     private static int respawnCount = 0; 
+    public static bool isNextLevel = false;  
 
     // Start is called before the first frame update
     void Start()
@@ -71,12 +71,14 @@ public class PlayerController : MonoBehaviour
         
         respawnCount = PlayerPrefs.GetInt("RespawnCount", 0); 
 
-        if(respawnCount == 0) {
+        if(respawnCount == 0 || isNextLevel) {
             player.transform.position = spawnPoint.transform.position; 
             checkpointPos = spawnPoint.transform.position; 
+            respawnCount++; 
         } else {
             player.transform.position = checkpointPos; 
         }
+        Debug.Log("player respawn count" + respawnCount);
     }
 
     #region MOVEMENT
@@ -293,6 +295,19 @@ public class PlayerController : MonoBehaviour
      }
     #endregion 
 
+    # region IS NEXT LEVEL 
+
+    public static bool GetIsNextLevel() 
+    {
+        return isNextLevel; 
+    }
+
+    public static void SetIsNextLevel(bool condition)
+    {
+        isNextLevel = condition; 
+    }
+
+    #endregion
     private void OnDisable()
     {
         Debug.Log("disable called"); 

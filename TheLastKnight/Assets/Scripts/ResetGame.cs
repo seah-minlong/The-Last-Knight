@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetPlayerInventoryOnPlay : MonoBehaviour
+public class ResetGame : MonoBehaviour
 {
     [SerializeField] PlayerInventory playerInventory; 
 
@@ -25,6 +25,12 @@ public class ResetPlayerInventoryOnPlay : MonoBehaviour
             item.numberHeld = 0; 
         }
     } 
+
+   public static void ResetGameLevel()
+    {
+        PlayerController.SetIsNextLevel(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
