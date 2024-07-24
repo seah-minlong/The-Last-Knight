@@ -470,8 +470,8 @@ MonoBehaviour:
   portalPosition: {x: 9.83, y: 14.52, z: 0}
   damageSoundClip: {fileID: 8300000, guid: bf25625fb0e329a4f8fbbd01a433cb83, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 358367a7f1e583249b75273aebd5e3d5, type: 3}
-  enemy: {fileID: 7795634856525316734, guid: 822df812a4fad4e4fabe6e2eb09fb445, type: 3}
-  chaseRadius: 5
+  enemy: {fileID: 808748000602202583, guid: 17e4636a88769ad45a4dc1defbd59223, type: 3}
+  chaseRadius: 4
   attackRadius: 1.5
   sideSlash: {fileID: 4522900583699413679}
 --- !u!1 &7817669804023622645
