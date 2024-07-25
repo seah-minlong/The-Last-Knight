@@ -52,5 +52,9 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 1; 
         isPaused = false; 
     }
+
+    public static bool GetIsPaused() {
+        return isPaused; 
+    }
     
 }

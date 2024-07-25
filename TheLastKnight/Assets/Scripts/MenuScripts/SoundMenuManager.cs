@@ -28,6 +28,7 @@ public class SoundMenuManager : MonoBehaviour
     private void Start()
     {
         musicSource.clip = background;
+        musicSource.loop = true; 
         musicSource.Play();
     }
 
@@ -40,6 +41,7 @@ public class SoundMenuManager : MonoBehaviour
     public void ChangeBackgroundMusic(AudioClip clip)
     {
         musicSource.clip = clip;
+        musicSource.loop = true; 
         musicSource.Play();
     }
 

@@ -9,6 +9,7 @@ public class VictoryMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject victoryMenuCanvas; 
     [SerializeField] AudioClip victoryMusic;
+    [SerializeField] GameObject dialogueBoxCanvas; 
     private static bool isVictory = false;
     public static VictoryMenuScript instance;
 
@@ -29,6 +30,7 @@ public class VictoryMenuScript : MonoBehaviour
         SoundMenuManager.instance.ChangeBackgroundMusic(victoryMusic);
         isVictory = true; 
         Freeze(); 
+        dialogueBoxCanvas.SetActive(false); 
         victoryMenuCanvas.SetActive(true); 
     }
 
@@ -45,5 +47,9 @@ public class VictoryMenuScript : MonoBehaviour
         SceneManager.LoadScene("MainMenuScene"); 
         Time.timeScale = 1; 
         isVictory = false; 
+    }
+
+    public static bool GetIsVictory() {
+        return isVictory; 
     }
 }

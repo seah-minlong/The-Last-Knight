@@ -17,7 +17,7 @@ public class DialogueCreator : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && !PauseMenuScript.GetIsPaused() && !VictoryMenuScript.GetIsVictory())
         {
             DisableContextClue();
             if (dialogueBox.activeInHierarchy)
