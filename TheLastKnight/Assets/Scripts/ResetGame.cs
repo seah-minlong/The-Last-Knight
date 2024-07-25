@@ -28,6 +28,7 @@ public class ResetGame : MonoBehaviour
 
    public static void ResetGameLevel()
     {
+        Debug.Log("reset game level called"); 
         PlayerController.SetIsNextLevel(false);
     }
 
@@ -35,5 +36,6 @@ public class ResetGame : MonoBehaviour
     void Start()
     {
         ResetInventory(); 
+        ResetGameLevel(); 
     }
 }

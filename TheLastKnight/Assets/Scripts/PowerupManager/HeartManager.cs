@@ -16,17 +16,23 @@ public class HeartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerController.GetRespawnCount() == 0)
+      
+        if (PlayerController.GetIsNextLevel() && PlayerController.GetRespawnCount() == 0 )
+        {   // need to keep the number of health containers, and also keep the health value 
+            Debug.Log("if called in heart manager"); 
+            PlayerController.SetIsNextLevel(false);
+        } 
+        else if (PlayerController.GetRespawnCount() == 0)
         {
+            // reset number of heart container to default 
+            Debug.Log("elif called in heart manager"); 
             heartContainers.RuntimeValue = initialNumberOfHeartContainers;
             playerCurrentHealth.RuntimeValue = playerCurrentHealth.initialValue;
         }
-        else if (PlayerController.GetIsNextLevel())
-        {
-            PlayerController.SetIsNextLevel(false);
-        }
         else
         {
+            // reset player health to full upon respawn. no change in heart containers
+            Debug.Log("else called in heart manager"); 
             playerCurrentHealth.RuntimeValue = heartContainers.RuntimeValue * 2f;
         }
 

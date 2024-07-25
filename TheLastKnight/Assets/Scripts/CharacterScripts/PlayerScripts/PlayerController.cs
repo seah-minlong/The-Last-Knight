@@ -70,12 +70,18 @@ public class PlayerController : MonoBehaviour
         originalMaterial = spriteRenderer.material;
         
         respawnCount = PlayerPrefs.GetInt("RespawnCount", 0); 
+        Debug.Log("start in player controller called " + isNextLevel + respawnCount);
 
-        if(respawnCount == 0 || isNextLevel) {
+        if(isNextLevel) {
+            ResetRespawnCount(); 
+        }
+
+        if(respawnCount == 0) {
+            Debug.Log("if for respawn count called"); 
             player.transform.position = spawnPoint.transform.position; 
             checkpointPos = spawnPoint.transform.position; 
-            respawnCount++; 
-        } else {
+        } else {     
+            Debug.Log("else for respawn count called");    
             player.transform.position = checkpointPos; 
         }
         Debug.Log("player respawn count" + respawnCount);
