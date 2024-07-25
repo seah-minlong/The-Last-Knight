@@ -11,7 +11,7 @@ public class GoldManager : MonoBehaviour
 
     void Start() {
         Debug.Log("start for gold manager is called"); 
-        if (PlayerController.GetRespawnCount() == 0)
+        if (PlayerController.GetRespawnCount() == 0 && !PlayerController.GetIsNextLevel())
         {
             goldItem.numberHeld = 0; 
         }

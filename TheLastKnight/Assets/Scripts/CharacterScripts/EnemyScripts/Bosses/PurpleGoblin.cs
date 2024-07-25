@@ -123,5 +123,38 @@ public class PurpleGoblin : Bosses
     }
     #endregion
 
-    
+    public override void TookDamage(float damage) {
+        
+        health -= damage;
+
+        // play sound FX 
+        SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform);
+
+        if(alive)
+        {
+            if (health <= 0)
+            {
+                // Stop Music
+                SoundMenuManager.instance.PauseMusic();
+
+                LockMovement();
+                Defeated();
+                alive = false;
+            } 
+            else
+            {
+                Stagger();
+                if (!Stage2 && health <= halfHealth)
+                {
+                    Debug.Log("Stage 2");
+                    Stage2 = true;
+
+                    // Play Stage 2 Music
+                    BossMusic.instance.Stage2Music();
+
+                    SpawnEnemy();   
+                }
+            }
+        } 
+    }
 }

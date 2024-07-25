@@ -26,6 +26,10 @@ public class Portal : MonoBehaviour
 
             // go next level -> Scene changes once Disappear animation finishes
             Disappear();
+            Debug.Log("next level and respawn count resetted"); 
+            PlayerController.SetIsNextLevel(true);
+            PlayerController.ResetRespawnCount(); 
+            Debug.Log("player game level is : " + PlayerController.isNextLevel);  
         }
     }
 

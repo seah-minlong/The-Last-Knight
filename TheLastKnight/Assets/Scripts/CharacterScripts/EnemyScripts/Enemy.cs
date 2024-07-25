@@ -109,6 +109,7 @@ abstract public class Enemy : MonoBehaviour
         // Set the routine to null, signaling that it's finished.
         flashRoutine = null;
     }
+    
     #endregion
 
 }

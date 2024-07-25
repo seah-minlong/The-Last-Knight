@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391bfc131ef354c9f9b55e6dfcf8bdcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: {fileID: 11400000, guid: d7be88c1a4bd8b741abac10a4d54c97f, type: 2}
+  maxHealth: {fileID: 11400000, guid: 6c48462136f0e8c4f9ead3a682c62e2b, type: 2}
   moveSpeed: 1.25
   collisionOffSet: 0.04
   attackDelay: 1
@@ -203,7 +203,7 @@ MonoBehaviour:
   flashDuration: 0.2
   attackSoundClip: {fileID: 8300000, guid: c508f4e93f0d14e48b526110368be3ad, type: 3}
   chaseRadius: 4
-  attackRadius: 1
+  attackRadius: 0.8
   sideSlash: {fileID: 0}
   heart: {fileID: 6956914474929770964, guid: 35369a3bdb126134088d5d353cd8fc66, type: 3}
   gold: {fileID: 5166147622561388583, guid: 1ae532cad60c245aba62ed79062f73fc, type: 3}
@@ -285,6 +285,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.6}
   m_Size: {x: 1.5, y: 1.5}
   m_Direction: 0
