@@ -20,7 +20,6 @@ public class HeartManager : MonoBehaviour
         if (PlayerController.GetIsNextLevel() && PlayerController.GetRespawnCount() == 0 )
         {   // need to keep the number of health containers, and also keep the health value 
             Debug.Log("if called in heart manager"); 
-            PlayerController.SetIsNextLevel(false);
         } 
         else if (PlayerController.GetRespawnCount() == 0)
         {

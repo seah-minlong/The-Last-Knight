@@ -10,7 +10,7 @@ public class TorchGoblinEnemy : MobAIChase
         if (alive) 
         {
             AIChase(getChaseRadius(), getAttackRadius());
-        }
+        } 
     }
 
     public override void TookDamage(float damage) {

@@ -72,10 +72,6 @@ public class PlayerController : MonoBehaviour
         respawnCount = PlayerPrefs.GetInt("RespawnCount", 0); 
         Debug.Log("start in player controller called " + isNextLevel + respawnCount);
 
-        if(isNextLevel) {
-            ResetRespawnCount(); 
-        }
-
         if(respawnCount == 0) {
             Debug.Log("if for respawn count called"); 
             player.transform.position = spawnPoint.transform.position; 

@@ -28,7 +28,7 @@ public class Portal : MonoBehaviour
             Disappear();
             Debug.Log("next level and respawn count resetted"); 
             PlayerController.SetIsNextLevel(true);
-            PlayerController.ResetRespawnCount(); 
+            PlayerPrefs.SetInt("RespawnCount", 0);
             Debug.Log("player game level is : " + PlayerController.isNextLevel);  
         }
     }
